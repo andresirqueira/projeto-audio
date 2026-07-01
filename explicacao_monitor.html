@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Reunião - Explicação do Funcionamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; }
+        .container { margin-top: 30px; }
+        .card { margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .code-block { background: #f1f3f4; padding: 15px; border-radius: 5px; font-family: monospace; }
+        .highlight { background: #fff3cd; padding: 2px 4px; border-radius: 3px; }
+        .flow-diagram { text-align: center; margin: 20px 0; }
+        .metric-box { background: #e9ecef; padding: 10px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">📊 Monitor de Reunião - Sistema de Análise de Qualidade de Áudio</h1>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>🎯 Objetivo do Sistema</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>O <strong>monitor_reuniao.py</strong> é um sistema automatizado que monitora reuniões online em tempo real, coletando dados de qualidade de áudio e identificando participantes através de OCR (Reconhecimento Óptico de Caracteres).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>🎵 Análise de Áudio</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Métricas Coletadas:</h5>
+                        <div class="metric-box">
+                            <strong>RMS (Root Mean Square):</strong> Volume médio do áudio
+                        </div>
+                        <div class="metric-box">
+                            <strong>Peak:</strong> Pico máximo de amplitude
+                        </div>
+                        <div class="metric-box">
+                            <strong>Clipping:</strong> Número de amostras que excedem o limite
+                        </div>
+                        <div class="metric-box">
+                            <strong>SNR (Signal-to-Noise Ratio):</strong> Relação sinal/ruído em dB
+                        </div>
+                        
+                        <h5 class="mt-3">Diagnóstico Automático:</h5>
+                        <ul>
+                            <li><span class="highlight">Muito alto:</span> RMS > 0.7</li>
+                            <li><span class="highlight">Bom:</span> RMS entre 0.1 e 0.7</li>
+                            <li><span class="highlight">Baixo:</span> RMS entre 0.03 e 0.1</li>
+                            <li><span class="highlight">Muito baixo:</span> RMS < 0.03</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4>👥 Detecção de Participantes</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Funcionalidades OCR:</h5>
+                        <ul>
+                            <li>Captura de tela da área de participantes</li>
+                            <li>Reconhecimento de texto usando Tesseract</li>
+                            <li>Filtragem de palavras irrelevantes</li>
+                            <li>Identificação de nomes de participantes</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Palavras Ignoradas:</h5>
+                        <div class="code-block">
+                            'add people', 'search for people', 'in the meeting', 
+                            'contributors', 'meeting host', 'you', 'people'
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h4>⚙️ Configurações Técnicas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Parâmetros de Áudio:</h5>
+                                <ul>
+                                    <li><strong>Sample Rate:</strong> 44.100 Hz</li>
+                                    <li><strong>Block Size:</strong> 1024 amostras</li>
+                                    <li><strong>Intervalo de Captura:</strong> 1 segundo</li>
+                                    <li><strong>Dispositivo:</strong> Stereo Mix/Loopback</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Configurações de Tela:</h5>
+                                <ul>
+                                    <li><strong>Coordenadas:</strong> X:1450, Y:194</li>
+                                    <li><strong>Tamanho:</strong> 437x712 pixels</li>
+                                    <li><strong>Região:</strong> Área de participantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h4>🔄 Fluxo de Funcionamento</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="flow-diagram">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="alert alert-primary">1. Inicialização</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="alert alert-info">2. Detectar Stereo Mix</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="alert alert-success">3. Capturar Áudio</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="alert alert-warning">4. Capturar Tela</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="alert alert-danger">5. Processar OCR</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="alert alert-dark">6. Salvar CSV</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5>Processo Detalhado:</h5>
+                        <ol>
+                            <li><strong>Inicialização:</strong> Configura dispositivos de áudio e arquivo CSV</li>
+                            <li><strong>Detecção de Dispositivo:</strong> Encontra Stereo Mix/Loopback automaticamente</li>
+                            <li><strong>Captura de Áudio:</strong> Grava amostra de áudio e calcula métricas</li>
+                            <li><strong>Captura de Tela:</strong> Tira screenshot da área de participantes</li>
+                            <li><strong>OCR:</strong> Extrai texto e identifica nomes de participantes</li>
+                            <li><strong>Salvamento:</strong> Registra dados no arquivo CSV com timestamp</li>
+                            <li><strong>Loop:</strong> Repete o processo a cada segundo</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4>📁 Saída de Dados</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Arquivo CSV Gerado:</h5>
+                        <div class="code-block">
+                            Data/Hora, RMS, Peak, Clipping, SNR, Diagnóstico, Participantes
+                            2024-01-15 14:30:01, 0.1234, 0.5678, 0, 15.67, Bom (Ruído baixo/OK), João Silva; Maria Santos
+                        </div>
+                        
+                        <h5 class="mt-3">Campos do CSV:</h5>
+                        <ul>
+                            <li><strong>Data/Hora:</strong> Timestamp da captura</li>
+                            <li><strong>RMS:</strong> Volume médio (0-1)</li>
+                            <li><strong>Peak:</strong> Pico máximo (0-1)</li>
+                            <li><strong>Clipping:</strong> Número de amostras distorcidas</li>
+                            <li><strong>SNR:</strong> Relação sinal/ruído em dB</li>
+                            <li><strong>Diagnóstico:</strong> Avaliação automática da qualidade</li>
+                            <li><strong>Participantes:</strong> Lista de nomes identificados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>🚀 Como Usar</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Pré-requisitos:</h5>
+                        <ul>
+                            <li>Python 3.7+ instalado</li>
+                            <li>Bibliotecas: pytesseract, pyautogui, sounddevice, numpy, PIL</li>
+                            <li>Tesseract OCR instalado no sistema</li>
+                            <li>Dispositivo Stereo Mix habilitado</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Execução:</h5>
+                        <div class="code-block">
+                            python monitor_reuniao.py
+                        </div>
+                        
+                        <h5 class="mt-3">Controle:</h5>
+                        <ul>
+                            <li><strong>Iniciar:</strong> Execute o script</li>
+                            <li><strong>Parar:</strong> Pressione Ctrl+C</li>
+                            <li><strong>Log:</strong> Salvo automaticamente em CSV</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4>💡 Aplicações</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>🎯 Qualidade de Áudio</h5>
+                                <ul>
+                                    <li>Monitoramento de reuniões</li>
+                                    <li>Detecção de problemas técnicos</li>
+                                    <li>Relatórios de qualidade</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>📊 Análise de Participação</h5>
+                                <ul>
+                                    <li>Controle de presença</li>
+                                    <li>Estatísticas de reunião</li>
+                                    <li>Relatórios de participação</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>🔧 Troubleshooting</h5>
+                                <ul>
+                                    <li>Identificação de problemas</li>
+                                    <li>Diagnóstico automático</li>
+                                    <li>Logs para suporte técnico</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-5 mb-3 text-muted">
+            <small>
+                Sistema de Monitoramento de Reuniões - Análise de Qualidade de Áudio e Participação
+            </small>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "audio_referencia_arquivo": "referencia.mp3",
+  "volume_pc_percent": 50,
+  "notas": "Preenchido por salvar_calibragem.py após calibragem com áudio padrão.",
+  "salas": {
+    "Sala Bem Pensado": {
+      "data_calibragem": "2026-05-11 07:47:45",
+      "fonte_csv": "log_reuniao_unificado.csv",
+      "n_linhas": 116,
+      "rms_medio": 0.054384,
+      "peak_medio": 0.143542,
+      "snr_medio": 9.8157,
+      "clipping_pct_medio": null
+    },
+    "Sala Up": {
+      "data_calibragem": "2026-05-25 08:26:07",
+      "data_inicio": "2026-05-25 07:39:44",
+      "data_fim": "2026-05-25 08:26:07",
+      "duracao_seg": 2783,
+      "fonte_csv": "sala_up_calibragem.csv",
+      "n_linhas": 471,
+      "rms_medio": 0.024531,
+      "peak_medio": 0.159297,
+      "snr_medio": 26.5366,
+      "clipping_pct_medio": 0.0
+    }
+  },
+  "ultima_atualizacao": "2026-05-25 09:37:25"
+}

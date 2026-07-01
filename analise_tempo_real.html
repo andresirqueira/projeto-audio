@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Áudio em Tempo Real</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container { margin-top: 20px; }
+        .card { 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none;
+            border-radius: 15px;
+        }
+        .card-header {
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: bold;
+        }
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+        }
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .status-excellent { background: #28a745; }
+        .status-good { background: #17a2b8; }
+        .status-fair { background: #ffc107; }
+        .status-poor { background: #dc3545; }
+        .status-silence { background: #6c757d; }
+        
+        .waveform-container {
+            background: #000;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .spectrum-container {
+            background: #000;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        
+        .control-panel {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .real-time-indicator {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .frequency-band {
+            height: 100px;
+            background: linear-gradient(to top, #00ff00, #ffff00, #ff0000);
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .frequency-marker {
+            position: absolute;
+            bottom: 0;
+            width: 2px;
+            background: white;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="control-panel">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="text-white mb-0">
+                        🎵 Análise de Áudio em Tempo Real
+                        <span class="real-time-indicator">●</span>
+                    </h2>
+                </div>
+                <div class="col-md-6 text-end">
+                    <button id="startBtn" class="btn btn-success btn-lg me-2">
+                        ▶️ Iniciar Análise
+                    </button>
+                                         <button id="testBtn" class="btn btn-warning btn-lg me-2">
+                         🔧 Testar Microfone
+                     </button>
+                     <button id="stopBtn" class="btn btn-danger btn-lg" disabled>
+                         ⏹️ Parar
+                     </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Métricas Principais -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>📊 Métricas Principais</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="metric-grid">
+                            <div>
+                                <div class="metric-label">RMS (Volume Médio)</div>
+                                <div id="rmsValue" class="metric-value bg-primary text-white">0.0000</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">Peak (Pico Máximo)</div>
+                                <div id="peakValue" class="metric-value bg-info text-white">0.0000</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">Crest Factor</div>
+                                <div id="crestValue" class="metric-value bg-warning text-dark">0.00</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">Clipping</div>
+                                <div id="clippingValue" class="metric-value bg-danger text-white">0</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">SNR (dB)</div>
+                                <div id="snrValue" class="metric-value bg-success text-white">0.00</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">THD (%)</div>
+                                <div id="thdValue" class="metric-value bg-secondary text-white">0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Status e Diagnóstico -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>🔍 Status e Diagnóstico</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="statusDisplay">
+                            <div class="alert alert-secondary">
+                                <span class="status-indicator status-silence"></span>
+                                Aguardando áudio...
+                            </div>
+                        </div>
+                        
+                                                 <h5>Análise de Qualidade:</h5>
+                         <ul id="qualityAnalysis" class="list-group list-group-flush">
+                             <li class="list-group-item">• Aguardando dados de áudio</li>
+                         </ul>
+                         
+                         <div class="alert alert-info mt-3">
+                             <h6>📋 Como analisar áudio do media player:</h6>
+                             <ol class="mb-0">
+                                 <li><strong>Método 1 - Alto-falantes:</strong>
+                                     <ul class="mb-2">
+                                         <li>Reproduza o áudio no seu media player</li>
+                                         <li>Posicione o microfone próximo aos alto-falantes</li>
+                                         <li>Clique em "Iniciar Análise"</li>
+                                         <li>O microfone capturará o áudio reproduzido</li>
+                                     </ul>
+                                 </li>
+                                 <li><strong>Método 2 - Fone de ouvido:</strong>
+                                     <ul class="mb-2">
+                                         <li>Use fones de ouvido para reproduzir o áudio</li>
+                                         <li>Posicione o microfone próximo aos fones</li>
+                                         <li>Clique em "Iniciar Análise"</li>
+                                     </ul>
+                                 </li>
+                                 <li><strong>Método 3 - Cabo de áudio:</strong>
+                                     <ul class="mb-2">
+                                         <li>Conecte a saída de áudio do PC ao microfone via cabo</li>
+                                         <li>Use um adaptador se necessário</li>
+                                         <li>Reproduza o áudio e inicie a análise</li>
+                                     </ul>
+                                 </li>
+                                                          </ol>
+                         </div>
+                         
+                         <div class="alert alert-warning mt-3">
+                             <h6>💡 Dicas para melhor qualidade:</h6>
+                             <ul class="mb-0">
+                                 <li>Use um ambiente silencioso para reduzir ruído de fundo</li>
+                                 <li>Mantenha o microfone a uma distância constante do áudio</li>
+                                 <li>Evite eco e reverberação no ambiente</li>
+                                 <li>Use microfone de boa qualidade se possível</li>
+                                 <li>Teste diferentes volumes do media player</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Métricas Avançadas -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4>⚡ Métricas Avançadas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="metric-label">Frequência Fundamental</div>
+                                <div id="fundamentalFreq" class="metric-value bg-light text-dark">0 Hz</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-label">Largura de Banda</div>
+                                <div id="bandwidth" class="metric-value bg-light text-dark">0 Hz</div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <div class="metric-label">Dynamic Range</div>
+                                <div id="dynamicRange" class="metric-value bg-light text-dark">0 dB</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-label">Spectral Centroid</div>
+                                <div id="spectralCentroid" class="metric-value bg-light text-dark">0 Hz</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Visualização de Onda -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4>🌊 Forma de Onda</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="waveform-container">
+                            <canvas id="waveformCanvas" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Espectro de Frequência -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4>📈 Espectro de Frequência</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="spectrum-container">
+                            <canvas id="spectrumCanvas" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Análise de Bandas de Frequência -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h4>🎚️ Análise por Bandas de Frequência</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="subBass">
+                                        <div class="frequency-marker" style="left: 10%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">Sub Bass<br>(20-60 Hz)</div>
+                                    <div id="subBassLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="bass">
+                                        <div class="frequency-marker" style="left: 20%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">Bass<br>(60-250 Hz)</div>
+                                    <div id="bassLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="lowMid">
+                                        <div class="frequency-marker" style="left: 30%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">Low Mid<br>(250-500 Hz)</div>
+                                    <div id="lowMidLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="mid">
+                                        <div class="frequency-marker" style="left: 40%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">Mid<br>(500-2000 Hz)</div>
+                                    <div id="midLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="highMid">
+                                        <div class="frequency-marker" style="left: 50%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">High Mid<br>(2-4 kHz)</div>
+                                    <div id="highMidLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="text-center">
+                                    <div class="frequency-band" id="treble">
+                                        <div class="frequency-marker" style="left: 60%; height: 0%;"></div>
+                                    </div>
+                                    <div class="metric-label">Treble<br>(4-20 kHz)</div>
+                                    <div id="trebleLevel" class="metric-value bg-dark text-white">0 dB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Histórico de Métricas -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h4>📊 Histórico de Métricas</h4>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="historyChart" width="800" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let audioContext, analyser, microphone, isRecording = false;
+        let waveformCtx, spectrumCtx, historyChart;
+        let historyData = {
+            rms: [], peak: [], snr: [], thd: [], time: []
+        };
+
+        // Inicializar gráfico de histórico
+        function initHistoryChart() {
+            const ctx = document.getElementById('historyChart').getContext('2d');
+            historyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'RMS',
+                        data: [],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }, {
+                        label: 'Peak',
+                        data: [],
+                        borderColor: 'rgb(255, 99, 132)',
+                        tension: 0.1
+                    }, {
+                        label: 'SNR',
+                        data: [],
+                        borderColor: 'rgb(54, 162, 235)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Inicializar visualizações
+        function initVisualizations() {
+            waveformCtx = document.getElementById('waveformCanvas').getContext('2d');
+            spectrumCtx = document.getElementById('spectrumCanvas').getContext('2d');
+            
+            // Configurar canvas
+            waveformCtx.fillStyle = '#000';
+            waveformCtx.fillRect(0, 0, 400, 200);
+            spectrumCtx.fillStyle = '#000';
+            spectrumCtx.fillRect(0, 0, 400, 200);
+        }
+
+        // Calcular métricas de áudio
+        function calculateMetrics(audioData) {
+            const samples = audioData.length;
+            
+            // RMS
+            const rms = Math.sqrt(audioData.reduce((sum, sample) => sum + sample * sample, 0) / samples);
+            
+            // Peak
+            const peak = Math.max(...audioData.map(Math.abs));
+            
+            // Crest Factor
+            const crestFactor = peak / (rms + 1e-10);
+            
+            // Clipping
+            const clipping = audioData.filter(sample => Math.abs(sample) > 0.99).length;
+            
+            // SNR (simplificado)
+            const signalPower = audioData.reduce((sum, sample) => sum + sample * sample, 0) / samples;
+            const noisePower = 0.001; // Ruído de fundo estimado
+            const snr = 10 * Math.log10(signalPower / (noisePower + 1e-10));
+            
+            // THD (simplificado)
+            const fundamental = Math.abs(audioData[0]);
+            const harmonics = audioData.slice(1).reduce((sum, sample) => sum + Math.abs(sample), 0);
+            const thd = (harmonics / (fundamental + 1e-10)) * 100;
+            
+            return { rms, peak, crestFactor, clipping, snr, thd };
+        }
+
+        // Atualizar display
+        function updateDisplay(metrics) {
+            document.getElementById('rmsValue').textContent = metrics.rms.toFixed(4);
+            document.getElementById('peakValue').textContent = metrics.peak.toFixed(4);
+            document.getElementById('crestValue').textContent = metrics.crestFactor.toFixed(2);
+            document.getElementById('clippingValue').textContent = metrics.clipping;
+            document.getElementById('snrValue').textContent = metrics.snr.toFixed(2);
+            document.getElementById('thdValue').textContent = metrics.thd.toFixed(2);
+            
+            // Atualizar status
+            updateStatus(metrics);
+            
+            // Adicionar ao histórico
+            addToHistory(metrics);
+        }
+
+        // Atualizar status de captura
+        function updateCaptureStatus(message) {
+            const statusDisplay = document.getElementById('statusDisplay');
+            statusDisplay.innerHTML = `
+                <div class="alert alert-success">
+                    <span class="status-indicator status-excellent"></span>
+                    ${message}
+                </div>
+            `;
+        }
+
+        // Atualizar status
+        function updateStatus(metrics) {
+            const statusDisplay = document.getElementById('statusDisplay');
+            const qualityAnalysis = document.getElementById('qualityAnalysis');
+            
+            let status, statusClass, indicatorClass;
+            
+            if (metrics.rms < 0.01) {
+                status = 'Silêncio';
+                statusClass = 'alert-secondary';
+                indicatorClass = 'status-silence';
+            } else if (metrics.rms > 0.7) {
+                status = 'Muito Alto - Risco de Clipping';
+                statusClass = 'alert-danger';
+                indicatorClass = 'status-poor';
+            } else if (metrics.rms > 0.1) {
+                status = 'Bom - Nível Adequado';
+                statusClass = 'alert-success';
+                indicatorClass = 'status-excellent';
+            } else if (metrics.rms > 0.03) {
+                status = 'Baixo - Pode ser Insuficiente';
+                statusClass = 'alert-warning';
+                indicatorClass = 'status-fair';
+            } else {
+                status = 'Muito Baixo - Verificar Microfone';
+                statusClass = 'alert-info';
+                indicatorClass = 'status-good';
+            }
+            
+            statusDisplay.innerHTML = `
+                <div class="alert ${statusClass}">
+                    <span class="status-indicator ${indicatorClass}"></span>
+                    ${status}
+                </div>
+            `;
+            
+            // Análise de qualidade
+            const analysis = [];
+            if (metrics.rms > 0.1 && metrics.rms < 0.7) analysis.push('• Volume em nível ideal');
+            if (metrics.crestFactor > 10) analysis.push('• Alto crest factor - dinâmica preservada');
+            if (metrics.clipping > 0) analysis.push('• Clipping detectado - reduzir volume');
+            if (metrics.snr > 20) analysis.push('• Boa relação sinal/ruído');
+            if (metrics.thd < 1) analysis.push('• Baixa distorção harmônica');
+            
+            qualityAnalysis.innerHTML = analysis.length > 0 ? 
+                analysis.map(item => `<li class="list-group-item">${item}</li>`).join('') :
+                '<li class="list-group-item">• Aguardando dados de áudio</li>';
+        }
+
+        // Adicionar ao histórico
+        function addToHistory(metrics) {
+            const now = new Date().toLocaleTimeString();
+            
+            historyData.rms.push(metrics.rms);
+            historyData.peak.push(metrics.peak);
+            historyData.snr.push(metrics.snr);
+            historyData.time.push(now);
+            
+            // Manter apenas últimos 50 pontos
+            if (historyData.rms.length > 50) {
+                historyData.rms.shift();
+                historyData.peak.shift();
+                historyData.snr.shift();
+                historyData.time.shift();
+            }
+            
+            // Atualizar gráfico
+            historyChart.data.labels = historyData.time;
+            historyChart.data.datasets[0].data = historyData.rms;
+            historyChart.data.datasets[1].data = historyData.peak;
+            historyChart.data.datasets[2].data = historyData.snr;
+            historyChart.update('none');
+        }
+
+        // Iniciar análise
+        async function startAnalysis() {
+            try {
+                // Capturar áudio do microfone
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: false,
+                        noiseSuppression: false,
+                        autoGainControl: false,
+                        sampleRate: 44100
+                    } 
+                });
+                
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                microphone = audioContext.createMediaStreamSource(stream);
+                
+                analyser.fftSize = 2048;
+                analyser.smoothingTimeConstant = 0.8;
+                
+                microphone.connect(analyser);
+                
+                isRecording = true;
+                document.getElementById('startBtn').disabled = true;
+                document.getElementById('stopBtn').disabled = false;
+                
+                // Atualizar status
+                updateCaptureStatus('Microfone capturado com sucesso! Reproduza o áudio próximo ao microfone.');
+                
+                // Iniciar loop de análise
+                analyzeAudio();
+                
+            } catch (error) {
+                console.error('Erro ao acessar microfone:', error);
+                alert('Erro ao acessar microfone. Verifique as permissões do navegador.');
+            }
+        }
+
+        // Parar análise
+        function stopAnalysis() {
+            isRecording = false;
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('stopBtn').disabled = true;
+            
+            if (microphone) {
+                microphone.disconnect();
+            }
+            if (audioContext) {
+                audioContext.close();
+            }
+        }
+
+        // Loop de análise de áudio
+        function analyzeAudio() {
+            if (!isRecording) return;
+            
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            const timeData = new Float32Array(bufferLength);
+            
+            analyser.getByteFrequencyData(dataArray);
+            analyser.getFloatTimeDomainData(timeData);
+            
+            // Calcular métricas
+            const metrics = calculateMetrics(timeData);
+            updateDisplay(metrics);
+            
+            // Atualizar visualizações
+            drawWaveform(timeData);
+            drawSpectrum(dataArray);
+            updateFrequencyBands(dataArray);
+            
+            // Próximo frame
+            requestAnimationFrame(analyzeAudio);
+        }
+
+        // Desenhar forma de onda
+        function drawWaveform(timeData) {
+            waveformCtx.fillStyle = '#000';
+            waveformCtx.fillRect(0, 0, 400, 200);
+            
+            waveformCtx.lineWidth = 2;
+            waveformCtx.strokeStyle = '#00ff00';
+            waveformCtx.beginPath();
+            
+            const sliceWidth = 400 / timeData.length;
+            let x = 0;
+            
+            for (let i = 0; i < timeData.length; i++) {
+                const v = timeData[i] * 100;
+                const y = 100 + v;
+                
+                if (i === 0) {
+                    waveformCtx.moveTo(x, y);
+                } else {
+                    waveformCtx.lineTo(x, y);
+                }
+                
+                x += sliceWidth;
+            }
+            
+            waveformCtx.lineTo(400, 100);
+            waveformCtx.stroke();
+        }
+
+        // Desenhar espectro
+        function drawSpectrum(frequencyData) {
+            spectrumCtx.fillStyle = '#000';
+            spectrumCtx.fillRect(0, 0, 400, 200);
+            
+            const barWidth = 400 / frequencyData.length;
+            let x = 0;
+            
+            for (let i = 0; i < frequencyData.length; i++) {
+                const barHeight = (frequencyData[i] / 255) * 200;
+                const hue = (i / frequencyData.length) * 360;
+                
+                spectrumCtx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+                spectrumCtx.fillRect(x, 200 - barHeight, barWidth, barHeight);
+                
+                x += barWidth;
+            }
+        }
+
+        // Atualizar bandas de frequência
+        function updateFrequencyBands(frequencyData) {
+            const bands = [
+                { id: 'subBass', range: [0, 3] },
+                { id: 'bass', range: [3, 8] },
+                { id: 'lowMid', range: [8, 15] },
+                { id: 'mid', range: [15, 30] },
+                { id: 'highMid', range: [30, 50] },
+                { id: 'treble', range: [50, frequencyData.length] }
+            ];
+            
+            bands.forEach(band => {
+                const start = band.range[0];
+                const end = band.range[1];
+                const bandData = frequencyData.slice(start, end);
+                const average = bandData.reduce((sum, val) => sum + val, 0) / bandData.length;
+                const level = (average / 255) * 100;
+                
+                // Atualizar marcador visual
+                const marker = document.querySelector(`#${band.id} .frequency-marker`);
+                marker.style.height = `${level}%`;
+                
+                // Atualizar valor numérico
+                const levelElement = document.getElementById(`${band.id}Level`);
+                levelElement.textContent = `${(level - 50).toFixed(1)} dB`;
+            });
+        }
+
+        // Testar captura de áudio
+        async function testCapture() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    audio: {
+                        echoCancellation: false,
+                        noiseSuppression: false,
+                        autoGainControl: false
+                    } 
+                });
+                
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const analyser = audioContext.createAnalyser();
+                const source = audioContext.createMediaStreamSource(stream);
+                
+                analyser.fftSize = 2048;
+                source.connect(analyser);
+                
+                const dataArray = new Uint8Array(analyser.frequencyBinCount);
+                analyser.getByteFrequencyData(dataArray);
+                
+                const hasAudio = dataArray.some(value => value > 0);
+                
+                if (hasAudio) {
+                    alert('✅ Microfone funcionando! Reproduza áudio próximo ao microfone e inicie a análise.');
+                } else {
+                    alert('⚠️ Microfone funcionando, mas sem áudio detectado. Faça algum som próximo ao microfone.');
+                }
+                
+                stream.getTracks().forEach(track => track.stop());
+                audioContext.close();
+                
+            } catch (error) {
+                alert('❌ Erro na captura. Verifique as permissões do microfone no navegador.');
+            }
+        }
+
+        // Event listeners
+        document.getElementById('startBtn').addEventListener('click', startAnalysis);
+        document.getElementById('stopBtn').addEventListener('click', stopAnalysis);
+        document.getElementById('testBtn').addEventListener('click', testCapture);
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            initVisualizations();
+            initHistoryChart();
+        });
+    </script>
+</body>
+</html>

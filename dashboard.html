@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard de Qualidade de Áudio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    :root {
+      --dash-accent: #1e3a5f;
+      --dash-accent-soft: #2d5a87;
+      --dash-surface: #ffffff;
+      --dash-muted: #6c757d;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(165deg, #e8eef5 0%, #f0f3f8 40%, #f5f6f8 100%);
+      min-height: 100vh;
+    }
+    .dash-wrap {
+      max-width: 1320px;
+    }
+    .dash-hero {
+      background: linear-gradient(135deg, var(--dash-accent) 0%, var(--dash-accent-soft) 100%);
+      color: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(30, 58, 95, 0.22);
+    }
+    .dash-hero h1 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .dash-hero p {
+      margin: 0.35rem 0 0;
+      opacity: 0.88;
+      font-size: 0.9rem;
+    }
+    .dash-hero-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .dash-hero-icon {
+      flex-shrink: 0;
+      width: 3.1rem;
+      height: 3.1rem;
+      border-radius: 0.65rem;
+      background: rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+    .dash-card-header i.bi {
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+    .dash-card {
+      background: var(--dash-surface);
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+    .dash-card-header {
+      padding: 0.85rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dash-accent);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fafbfc;
+    }
+    .dash-upload .form-control {
+      border-radius: 0.5rem;
+    }
+    #resumoDashboard {
+      display: none;
+      margin-bottom: 0;
+      border: none;
+      border-radius: 0;
+      padding: 1rem 1.25rem;
+      background: #f0f7fc;
+    }
+    #resumoDashboard.alert-warning {
+      background: #fff8e6;
+    }
+    .dash-stat {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem 0.85rem;
+      background: #fff;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      min-width: 0;
+    }
+    .dash-stat .lbl {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--dash-muted);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .dash-stat .val {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dash-accent);
+    }
+    .dash-stat .val .badge {
+      font-size: 0.85rem;
+      vertical-align: middle;
+    }
+    .nota-badge {
+      font-size: 0.75rem;
+      padding: 0.35em 0.55em;
+    }
+    .table-wrap {
+      max-height: min(70vh, 900px);
+      overflow: auto;
+    }
+    #tabelaMedias {
+      font-size: 0.8125rem;
+      margin-bottom: 0;
+    }
+    #tabelaMedias thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #f1f4f8 !important;
+      color: var(--dash-accent);
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+      padding: 0.55rem 0.4rem;
+      border-bottom: 2px solid #dee2e6;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+      vertical-align: middle;
+    }
+    #tabelaMedias thead th .th-stack {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      line-height: 1.2;
+    }
+    #tabelaMedias thead th .th-stack i {
+      font-size: 0.95rem;
+      opacity: 0.88;
+      font-weight: normal;
+      flex-shrink: 0;
+    }
+    #tabelaMedias thead th .th-stack span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    #tabelaMedias thead th:first-child .th-stack,
+    #tabelaMedias thead th.th-sala .th-stack {
+      justify-content: flex-start;
+    }
+    #tabelaMedias thead th:hover {
+      background: #e4eaf3 !important;
+    }
+    #tabelaMedias tbody td {
+      vertical-align: middle;
+      padding: 0.5rem 0.45rem;
+      word-break: break-word;
+    }
+    #tabelaMedias tbody tr:hover td {
+      background-color: rgba(30, 58, 95, 0.04);
+    }
+    #tabelaMedias td:nth-child(1) {
+      text-align: left;
+      white-space: nowrap;
+    }
+    #tabelaMedias td:nth-child(2) {
+      font-weight: 500;
+      text-align: left;
+      max-width: 14rem;
+    }
+    #tabelaMedias tbody td:nth-child(3),
+    #tabelaMedias tbody td:nth-child(4),
+    #tabelaMedias tbody td:nth-child(5),
+    #tabelaMedias tbody td:nth-child(6) {
+      text-align: center;
+    }
+    #tabelaMedias tbody tr[data-ref-chave] td:nth-child(2) {
+      cursor: pointer;
+    }
+    #tabelaMedias tbody tr[data-ref-chave] td:nth-child(2):hover {
+      background-color: rgba(30, 58, 95, 0.07);
+    }
+    .detalhe-ref-painel {
+      background: #f8fafc;
+      padding: 1rem 1.25rem;
+    }
+    .detalhe-ref-painel .table-ref-comp th {
+      width: 5.5rem;
+      font-weight: 600;
+      color: var(--dash-muted);
+      font-size: 0.8rem;
+      vertical-align: middle;
+    }
+    #relatorioPdfHost {
+      position: fixed;
+      left: -9999px;
+      top: 0;
+      width: 210mm;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="py-4">
+  <div class="container dash-wrap">
+    <header class="dash-hero">
+      <div class="dash-hero-layout">
+        <div class="dash-hero-icon" aria-hidden="true"><i class="bi bi-soundwave"></i></div>
+        <div>
+          <h1>Qualidade de áudio — reunião</h1>
+          <p><i class="bi bi-file-earmark-spreadsheet me-1" aria-hidden="true"></i>Carregue o CSV do monitor para ver médias, referência de calibragem e deltas.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="dash-card dash-upload mb-3">
+      <div class="dash-card-header d-flex align-items-center gap-2">
+        <i class="bi bi-cloud-arrow-up-fill" aria-hidden="true"></i>
+        <span>Ficheiro de dados</span>
+      </div>
+      <div class="p-3">
+        <label for="csvFile" class="form-label small text-muted mb-2 d-flex align-items-center gap-1">
+          <i class="bi bi-paperclip" aria-hidden="true"></i> Ficheiro CSV de log
+        </label>
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0 text-primary" title="Formato CSV"><i class="bi bi-filetype-csv fs-5" aria-hidden="true"></i></span>
+          <input type="file" id="csvFile" accept=".csv" class="form-control border-start-0 ps-0">
+        </div>
+        <p class="small text-muted mt-2 mb-0 d-flex align-items-start gap-2">
+          <i class="bi bi-info-circle flex-shrink-0 align-self-start" style="margin-top:0.12rem" aria-hidden="true"></i>
+          <span>Gerado pelo monitor de reunião; salas são reconhecidas via <code class="small">salas_canonicas.json</code>.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-card-header d-flex align-items-center gap-2">
+        <i class="bi bi-clipboard2-pulse" aria-hidden="true"></i>
+        <span>Resultados por sala (teste)</span>
+      </div>
+      <p class="small text-muted px-3 py-2 mb-0 border-bottom bg-white">Referência e deltas ao clicar na <strong>sala</strong> (ícone de marcador). Com calibragem, <strong>RMS</strong>, <strong>Peak</strong>, <strong>Clip.</strong> e <strong>SNR</strong> do teste usam fundo <span class="rounded px-1" style="background:#d4edda">verde</span> (alinhado ou melhor vs ref.), <span class="rounded px-1" style="background:#fff3cd">amarelo</span> (intermédio) ou <span class="rounded px-1" style="background:#f8d7da">vermelho</span> (pior vs ref.).</p>
+      <div id="resumoDashboard" class="alert alert-info d-flex flex-wrap gap-2 gap-md-3 align-items-stretch border-0 rounded-0" style="display:none;"></div>
+      <div class="table-wrap" id="chartsArea">
+          <table class="table table-striped table-hover table-bordered align-middle" id="tabelaMedias">
+            <thead>
+              <tr>
+                <th class="text-start" style="cursor:pointer;" onclick="sortTable(0)" title="Ordenar por data"><span class="th-stack"><i class="bi bi-calendar3" aria-hidden="true"></i><span>Data</span></span></th>
+                <th class="th-sala text-start" style="cursor:pointer;" onclick="sortTable(1)" title="Ordenar por sala"><span class="th-stack"><i class="bi bi-building" aria-hidden="true"></i><span>Sala</span></span></th>
+                <th style="cursor:pointer;" onclick="sortTable(2)" title="Ordenar por RMS"><span class="th-stack"><i class="bi bi-volume-up" aria-hidden="true"></i><span>RMS</span></span></th>
+                <th style="cursor:pointer;" onclick="sortTable(3)" title="Ordenar por peak"><span class="th-stack"><i class="bi bi-lightning-charge" aria-hidden="true"></i><span>Peak</span></span></th>
+                <th style="cursor:pointer;" onclick="sortTable(4)" title="Ordenar por clipping"><span class="th-stack"><i class="bi bi-exclamation-octagon" aria-hidden="true"></i><span>Clip.</span></span></th>
+                <th style="cursor:pointer;" onclick="sortTable(5)" title="Ordenar por SNR"><span class="th-stack"><i class="bi bi-broadcast" aria-hidden="true"></i><span>SNR</span></span></th>
+                <th class="text-center" style="cursor:pointer;" onclick="sortTable(6)" title="Ordenar por nota"><span class="th-stack"><i class="bi bi-award" aria-hidden="true"></i><span>Nota</span></span></th>
+                <th style="cursor:pointer;" onclick="sortTable(7)" title="Ordenar por duração"><span class="th-stack"><i class="bi bi-stopwatch" aria-hidden="true"></i><span>Tempo (seg)</span></span></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+      </div>
+      <div id="detalheRefPainel" class="detalhe-ref-painel" style="display:none;" role="region" aria-label="Referência de calibragem">
+        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+          <div>
+            <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:0.04em">Calibragem</div>
+            <strong id="detalheRefTitulo" class="text-body"></strong>
+            <div class="small text-muted" id="detalheRefSub"></div>
+          </div>
+          <div class="d-flex gap-2 flex-shrink-0">
+            <button type="button" class="btn btn-sm btn-primary" id="detalheRefPdf" title="Guardar relatório em PDF">
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Guardar PDF
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="detalheRefFechar" aria-label="Fechar painel de referência"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div id="detalheRefBody"></div>
+      </div>
+    </div>
+  </div>
+  <div id="relatorioPdfHost" aria-hidden="true"></div>
+  <script>
+    let allData = [];
+    /** Espelho de salas_canonicas.json — usado quando não há fetch (ex.: file://). Manter alinhado ao JSON. */
+    var SALAS_PADRAO_EMBUTIDO = [
+      { nome_canonico: 'Cozinha Brastemp', todas_as_palavras: ['cozinha', 'brastemp'] },
+      { nome_canonico: 'Cozinha Consul', todas_as_palavras: ['cozinha', 'consul'] },
+      { nome_canonico: 'Outback 01 - 1 Andar', todas_as_palavras: ['outback', '01', 'andar'] },
+      { nome_canonico: 'Outback 04 - 2 Andar', todas_as_palavras: ['outback', '04', 'andar'] },
+      { nome_canonico: 'Sala 01', todas_as_palavras: ['sala', '01'] },
+      { nome_canonico: 'Sala 02', todas_as_palavras: ['sala', '02'] },
+      { nome_canonico: 'Sala 03', todas_as_palavras: ['sala', '03'] },
+      { nome_canonico: 'Sala 04', todas_as_palavras: ['sala', '04'] },
+      { nome_canonico: 'Sala 05', todas_as_palavras: ['sala', '05'] },
+      { nome_canonico: 'Sala 11', todas_as_palavras: ['sala', '11'] },
+      { nome_canonico: 'Sala 12', todas_as_palavras: ['sala', '12'] },
+      { nome_canonico: 'Sala B Blend', todas_as_palavras: ['sala', 'blend'] },
+      { nome_canonico: 'Sala BB 223', todas_as_palavras: ['sala', '223', 'bb'] },
+      { nome_canonico: 'Sala Bem Pensado', todas_as_palavras: ['sala', 'bem', 'pensado'] },
+      { nome_canonico: 'Sala Blue Sky', todas_as_palavras: ['sala', 'blue', 'sky'] },
+      { nome_canonico: 'Sala Brastemp', todas_as_palavras: ['sala', 'brastemp'] },
+      { nome_canonico: 'Sala BTP 202', todas_as_palavras: ['sala', 'btp', '202'] },
+      { nome_canonico: 'Sala BTP 203', todas_as_palavras: ['sala', 'btp', '203'] },
+      { nome_canonico: 'Sala CC 210', todas_as_palavras: ['sala', 'cc', '210'] },
+      { nome_canonico: 'Sala CC 216', todas_as_palavras: ['sala', 'cc', '216'] },
+      { nome_canonico: 'Sala CC 217', todas_as_palavras: ['sala', 'cc', '217'] },
+      { nome_canonico: 'Sala CC 218', todas_as_palavras: ['sala', 'cc', '218'] },
+      { nome_canonico: 'Sala CC 221', todas_as_palavras: ['sala', 'cc', '221'] },
+      { nome_canonico: 'Sala CNS 101', todas_as_palavras: ['sala', 'cns', '101'] },
+      { nome_canonico: 'Sala CNS 115', todas_as_palavras: ['sala', 'cns', '115'] },
+      { nome_canonico: 'Sala CNS 118', todas_as_palavras: ['sala', 'cns', '118'] },
+      { nome_canonico: 'Sala Compra Certa', todas_as_palavras: ['sala', 'compra', 'certa'] },
+      { nome_canonico: 'Sala Consulado', todas_as_palavras: ['sala', 'consulado'] },
+      { nome_canonico: 'Sala Consul', todas_as_palavras: ['sala', 'consul'] },
+      { nome_canonico: 'Sala Facilita', todas_as_palavras: ['sala', 'facilita'] },
+      { nome_canonico: 'Sala Faz a Diferença', todas_as_palavras: ['sala', 'faz', 'diferenca'] },
+      { nome_canonico: 'Sala Gourmand', todas_as_palavras: ['sala', 'gourmand'] },
+      { nome_canonico: 'Sala Inverse', todas_as_palavras: ['sala', 'inverse'] },
+      { nome_canonico: 'Sala KAD 105', todas_as_palavras: ['sala', 'kad', '105'] },
+      { nome_canonico: 'Sala KAD 106', todas_as_palavras: ['sala', 'kad', '106'] },
+      { nome_canonico: 'Sala KAD 107', todas_as_palavras: ['sala', 'kad', '107'] },
+      { nome_canonico: 'Sala KAD 108', todas_as_palavras: ['sala', 'kad', '108'] },
+      { nome_canonico: 'Sala KAD 113', todas_as_palavras: ['sala', 'kad', '113'] },
+      { nome_canonico: 'Sala KAD 114', todas_as_palavras: ['sala', 'kad', '114'] },
+      { nome_canonico: 'Sala Kitchen Aid', todas_as_palavras: ['sala', 'kitchen', 'aid'] },
+      { nome_canonico: 'Sala Pode Confiar', todas_as_palavras: ['sala', 'pode', 'confiar'] },
+      { nome_canonico: 'Sala Retrô', todas_as_palavras: ['sala', 'retro'] },
+      { nome_canonico: 'Sala Sempre Mais', todas_as_palavras: ['sala', 'sempre', 'mais'] },
+      { nome_canonico: 'Sala Up', todas_as_palavras: ['sala', 'up'] },
+      { nome_canonico: 'Town Hall', todas_as_palavras: ['town', 'hall'] }
+    ];
+    var salasRegrasDoFetch = null;
+    /** Objeto JSON completo de calibragem_salas.json (com .salas), ou null. */
+    var calibragemPorSala = null;
+    /** chave grupo (dia__sala) → dados para o painel de referência */
+    var refDetalhePorChave = new Map();
+    var refPainelAbertoChave = null;
+
+    function salasRegrasAtivas() {
+      if (salasRegrasDoFetch && salasRegrasDoFetch.length) return salasRegrasDoFetch;
+      return SALAS_PADRAO_EMBUTIDO;
+    }
+
+    function normParaSalas(s) {
+      if (!s) return '';
+      return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    function textoParaNomeCanonico(texto, regras) {
+      if (!regras || !regras.length || !texto) return null;
+      const n = normParaSalas(texto);
+      for (let i = 0; i < regras.length; i++) {
+        const r = regras[i];
+        const pals = r.todas_as_palavras || [];
+        const nome = r.nome_canonico;
+        if (!nome || !pals.length) continue;
+        const ok = pals.every(function(p) {
+          const np = normParaSalas(p);
+          return np && n.indexOf(np) !== -1;
+        });
+        if (ok) return nome;
+      }
+      return null;
+    }
+
+    /** Nomes canónicos reconhecidos nos segmentos (separados por ;). null = linha fora da lista — não entra no dashboard. */
+    function resolverChaveParticipante(participantesColuna) {
+      var regras = salasRegrasAtivas();
+      if (!regras || !regras.length) return null;
+      if (!participantesColuna) return null;
+      var parts = String(participantesColuna).split(';').map(function(x) { return x.trim(); }).filter(Boolean);
+      if (!parts.length) return null;
+      var canonSet = new Set();
+      for (var i = 0; i < parts.length; i++) {
+        var c = textoParaNomeCanonico(parts[i], regras);
+        if (c) canonSet.add(c);
+      }
+      if (!canonSet.size) return null;
+      if (canonSet.size === 1) return Array.from(canonSet)[0];
+      return Array.from(canonSet).sort().join(' + ');
+    }
+
+    document.getElementById('csvFile').addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      calibragemPorSala = null;
+      Promise.all([
+        fetch('salas_canonicas.json', { cache: 'no-store' }).then(function(r) {
+          return r.ok ? r.json() : null;
+        }).catch(function() { return null; }),
+        fetch('calibragem_salas.json', { cache: 'no-store' }).then(function(r) {
+          return r.ok ? r.json() : null;
+        }).catch(function() { return null; })
+      ]).then(function(arr) {
+        salasRegrasDoFetch = arr[0] && arr[0].salas ? arr[0].salas : null;
+        calibragemPorSala = arr[1] && arr[1].salas ? arr[1] : null;
+      }).then(function() {
+        Papa.parse(file, {
+          header: true,
+          dynamicTyping: true,
+          complete: function(results) {
+            allData = results.data.filter(function(row) { return row['Data/Hora']; });
+            renderTabelaMedias(allData);
+          }
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var tbl = document.getElementById('tabelaMedias');
+      if (tbl && !tbl._painelRefInit) {
+        tbl._painelRefInit = true;
+        tbl.addEventListener('click', function(ev) {
+          var td = ev.target.closest('td');
+          if (!td || td.cellIndex !== 1) return;
+          var tr = td.closest('tr');
+          if (!tr || tr.parentElement.tagName !== 'TBODY') return;
+          var chave = tr.dataset.refChave;
+          if (!chave) return;
+          ev.preventDefault();
+          abrirOuTogglePainelRef(chave, tr);
+        });
+      }
+      var btnFechar = document.getElementById('detalheRefFechar');
+      if (btnFechar && !btnFechar._bound) {
+        btnFechar._bound = true;
+        btnFechar.addEventListener('click', fecharPainelRef);
+      }
+      var btnPdf = document.getElementById('detalheRefPdf');
+      if (btnPdf && !btnPdf._bound) {
+        btnPdf._bound = true;
+        btnPdf.addEventListener('click', exportarRelatorioPdf);
+      }
+      fetch('calibragem_salas.json', { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .catch(function() { return null; })
+        .then(function(d) {
+          if (d && d.salas) {
+            calibragemPorSala = d;
+            if (typeof allData !== 'undefined' && allData && allData.length) renderTabelaMedias(allData);
+          }
+        });
+    });
+
+    /** clippingPct: % de amostras com |x|>0,99 na janela (monitor novo). Se legacy (só contagem), usar isLegacyCount. */
+    function conceitoNota(rms, snr, clippingPct, isLegacyCount) {
+      if (isLegacyCount) {
+        if (rms >= 0.15 && rms <= 0.4 && snr >= 20 && clippingPct === 0) return 'A';
+        if (rms >= 0.1 && rms <= 0.5 && snr >= 10 && clippingPct < 5) return 'B';
+        if (rms >= 0.05 && rms < 0.1 && snr >= 5 && clippingPct < 10) return 'C';
+        return 'D';
+      }
+      if (rms >= 0.15 && rms <= 0.4 && snr >= 20 && clippingPct === 0) return 'A';
+      if (rms >= 0.1 && rms <= 0.5 && snr >= 10 && clippingPct < 0.5) return 'B';
+      if (rms >= 0.05 && rms < 0.1 && snr >= 5 && clippingPct < 2.0) return 'C';
+      return 'D';
+    }
+
+    function grupoUsaClippingPct(rows) {
+      return rows.some(function(r) {
+        return r['Clipping_pct'] !== undefined && r['Clipping_pct'] !== null && r['Clipping_pct'] !== '';
+      });
+    }
+
+    function clippingMedioParaGrupo(rows) {
+      if (grupoUsaClippingPct(rows)) {
+        return rows.reduce(function(a, b) { return a + (+b['Clipping_pct'] || 0); }, 0) / rows.length;
+      }
+      return rows.reduce(function(a, b) { return a + (+b['Clipping'] || 0); }, 0) / rows.length;
+    }
+
+    function refCalibragemDaSala(nomeSala) {
+      if (!calibragemPorSala || !calibragemPorSala.salas || !nomeSala) return null;
+      if (nomeSala.indexOf(' + ') !== -1) return null;
+      return calibragemPorSala.salas[nomeSala] || null;
+    }
+
+    function deltaPercMedia(atual, refVal) {
+      if (refVal == null || refVal === '' || Math.abs(+refVal) < 1e-12) return '—';
+      return (100 * (atual - +refVal) / +refVal).toFixed(1) + '%';
+    }
+
+    function deltaSnr(atual, refVal) {
+      if (refVal == null || refVal === '') return '—';
+      return (atual - +refVal).toFixed(2);
+    }
+
+    /** Cor nas células Δ: quanto mais perto de 0% (RMS/Peak), melhor. */
+    function estiloDeltaPerc(str) {
+      if (!str || str === '—') return '';
+      var v = Math.abs(parseFloat(String(str).replace('%', '').replace(',', '.')));
+      if (isNaN(v)) return '';
+      if (v <= 15) return 'background:#d4edda;';
+      if (v <= 35) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    /** SNR: teste acima da ref. (Δ ≥ 0) tende a ser melhor. */
+    function estiloDeltaSnrStr(str) {
+      if (!str || str === '—') return '';
+      var v = parseFloat(String(str).replace(',', '.'));
+      if (isNaN(v)) return '';
+      if (v >= 0) return 'background:#d4edda;';
+      if (v >= -4) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    function classeBadgeNota(nota) {
+      if (nota === 'A') return 'bg-success';
+      if (nota === 'B') return 'bg-primary';
+      if (nota === 'C') return 'bg-warning text-dark';
+      if (nota === 'D') return 'bg-danger';
+      return 'bg-secondary';
+    }
+
+    function htmlBadgeNota(nota) {
+      return '<span class="badge nota-badge rounded-pill ' + classeBadgeNota(nota) + '">' + nota + '</span>';
+    }
+
+    /**
+     * Nota A–D: quanto o teste se alinha à referência (4 critérios: RMS ~ref, Peak ~ref, SNR não pior que ref−3 dB, clipping não pior que ref+0,5 pp).
+     */
+    function notaVersusReferencia(ref, rms, peak, snr, clipMed, usaPct) {
+      var pts = 0;
+      var rr = Number(ref.rms_medio);
+      var rp = Number(ref.peak_medio);
+      var rs = Number(ref.snr_medio);
+      if (rr > 1e-12 && Math.abs(100 * (rms - rr) / rr) <= 20) pts++;
+      if (rp > 1e-12 && Math.abs(100 * (peak - rp) / rp) <= 25) pts++;
+      if (snr >= rs - 3) pts++;
+      if (usaPct && ref.clipping_pct_medio != null && ref.clipping_pct_medio !== '') {
+        if (clipMed <= Number(ref.clipping_pct_medio) + 0.5) pts++;
+      } else {
+        pts++;
+      }
+      if (pts >= 4) return 'A';
+      if (pts >= 3) return 'B';
+      if (pts >= 2) return 'C';
+      return 'D';
+    }
+
+    /** Cores nas células de teste quando existe calibragem (alinhado a notaVersusReferencia + zona intermédia). */
+    function estiloTesteRmsVsRef(rms, ref) {
+      var rr = Number(ref.rms_medio);
+      if (!(rr > 1e-12)) return '';
+      var p = Math.abs(100 * (rms - rr) / rr);
+      if (p <= 20) return 'background:#d4edda;';
+      if (p <= 35) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    function estiloTestePeakVsRef(peak, ref) {
+      var rp = Number(ref.peak_medio);
+      if (!(rp > 1e-12)) return '';
+      var p = Math.abs(100 * (peak - rp) / rp);
+      if (p <= 25) return 'background:#d4edda;';
+      if (p <= 45) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    function estiloTesteSnrVsRef(snr, ref) {
+      if (ref.snr_medio == null || ref.snr_medio === '') return '';
+      var rs = Number(ref.snr_medio);
+      if (snr >= rs - 3) return 'background:#d4edda;';
+      if (snr >= rs - 10) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    function estiloTesteClipVsRef(clipMed, ref, usaPct) {
+      if (!usaPct) return '';
+      if (ref.clipping_pct_medio == null || ref.clipping_pct_medio === '') return '';
+      var rc = Number(ref.clipping_pct_medio);
+      if (clipMed <= rc + 0.5) return 'background:#d4edda;';
+      if (clipMed <= rc + 2) return 'background:#fff3cd;';
+      return 'background:#f8d7da;';
+    }
+
+    function tdComEstilo(valorStr, estilo) {
+      var s = estilo || '';
+      if (s) return '<td style="' + s + '">' + valorStr + '</td>';
+      return '<td>' + valorStr + '</td>';
+    }
+
+    function getPrefixoParticipante(nome) {
+      if (!nome) return 'Desconhecido';
+      nome = nome.trim();
+      // Pega do arroba até antes do primeiro parêntese (ou até o fim, se não houver parêntese)
+      const match = nome.match(/(@[^\(]*)/);
+      return match ? match[1].trim() : nome;
+    }
+
+    function limparTrRefAtiva() {
+      document.querySelectorAll('#tabelaMedias tbody tr.table-active').forEach(function(r) {
+        r.classList.remove('table-active');
+      });
+    }
+
+    function fecharPainelRef() {
+      var panel = document.getElementById('detalheRefPainel');
+      if (panel) panel.style.display = 'none';
+      refPainelAbertoChave = null;
+      limparTrRefAtiva();
+    }
+
+    function htmlTdDelta(str, fnEstilo) {
+      return '<td style="' + (fnEstilo(str) || '') + '">' + str + '</td>';
+    }
+
+    /** Intervalo do monitor (~1 s entre linhas do CSV). */
+    var CAPTURE_INTERVAL_SEG = 1.0;
+
+    function tempoSegDoGrupoRows(rows) {
+      if (!rows || rows.length < 2) return 0;
+      var datas = rows.map(function(r) { return new Date(r['Data/Hora']); });
+      var minT = Math.min.apply(null, datas.map(function(d) { return d.getTime(); }));
+      var maxT = Math.max.apply(null, datas.map(function(d) { return d.getTime(); }));
+      return Math.round((maxT - minT) / 1000);
+    }
+
+    function tempoSegEstimadoPorLinhas(nLinhas) {
+      var n = Number(nLinhas) || 0;
+      if (n < 2) return 0;
+      return Math.round((n - 1) * CAPTURE_INTERVAL_SEG);
+    }
+
+    /** Duração da calibragem: igual ao teste (min/max Data/Hora) se existir duracao_seg no JSON. */
+    function tempoSegCalibragem(ref) {
+      if (!ref) return 0;
+      if (ref.duracao_seg != null && ref.duracao_seg !== '') {
+        return Math.max(0, Math.round(Number(ref.duracao_seg)) || 0);
+      }
+      return tempoSegEstimadoPorLinhas(ref.n_linhas);
+    }
+
+    function calibragemUsaDuracaoReal(ref) {
+      return ref && ref.duracao_seg != null && ref.duracao_seg !== '';
+    }
+
+    function formatarDuracaoSeg(seg) {
+      seg = Math.max(0, Math.round(Number(seg) || 0));
+      if (seg < 60) return seg + ' s';
+      var m = Math.floor(seg / 60);
+      var s = seg % 60;
+      if (m < 60) return m + ' min ' + s + ' s';
+      var h = Math.floor(m / 60);
+      m = m % 60;
+      return h + ' h ' + m + ' min';
+    }
+
+    function formatarDataHoraBr(str) {
+      if (!str) return '—';
+      var s = String(str).trim();
+      var m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:\s+(\d{2}):(\d{2})(?::(\d{2}))?)?/);
+      if (!m) return s;
+      var out = m[3] + '-' + m[2] + '-' + m[1];
+      if (m[4]) out += ' ' + m[4] + ':' + m[5] + (m[6] ? ':' + m[6] : '');
+      return out;
+    }
+
+    function renderPainelRefHtml(det) {
+      var ref = det.refC;
+      var rmsRef = Number(ref.rms_medio).toFixed(4);
+      var peakRef = Number(ref.peak_medio).toFixed(4);
+      var snrRef = Number(ref.snr_medio).toFixed(2);
+      var clipRef = ref.clipping_pct_medio != null && ref.clipping_pct_medio !== ''
+        ? (+ref.clipping_pct_medio).toFixed(3) + '%'
+        : '—';
+      var dRms = deltaPercMedia(det.rmsMedio, ref.rms_medio);
+      var dPeak = deltaPercMedia(det.peakMedio, ref.peak_medio);
+      var dSnr = deltaSnr(det.snrMedio, ref.snr_medio);
+      var dClipLinha = '—';
+      var dClipTd = '<td>—</td>';
+      if (det.usaPctGrupo && ref.clipping_pct_medio != null && ref.clipping_pct_medio !== '') {
+        var dpp = det.clippingMedio - Number(ref.clipping_pct_medio);
+        dClipLinha = dpp.toFixed(2) + ' pp';
+        var cor = '';
+        if (Math.abs(dpp) <= 0.25) cor = 'background:#d4edda;';
+        else if (Math.abs(dpp) <= 0.75) cor = 'background:#fff3cd;';
+        else cor = 'background:#f8d7da;';
+        dClipTd = '<td style="' + cor + '">' + dClipLinha + '</td>';
+      }
+      var tempoTesteTxt = formatarDuracaoSeg(det.tempoTesteSeg) + ' <span class="text-muted small">(' + det.nLinhasTeste + ' linhas)</span>';
+      var tempoRefTxt = formatarDuracaoSeg(det.tempoRefSeg) + ' <span class="text-muted small">(' + det.nLinhasRef + ' linhas)</span>';
+      var deltaTempo = det.tempoTesteSeg - det.tempoRefSeg;
+      var deltaTempoTxt = (det.tempoRefSeg > 0 || det.tempoTesteSeg > 0)
+        ? (deltaTempo >= 0 ? '+' : '') + formatarDuracaoSeg(Math.abs(deltaTempo))
+        : '—';
+      return (
+        '<div class="table-responsive">' +
+        '<table class="table table-sm table-bordered table-ref-comp align-middle mb-0 bg-white">' +
+        '<thead class="table-light"><tr><th></th><th>Teste</th><th>Ref. calibragem</th><th>Δ</th></tr></thead><tbody>' +
+        '<tr class="table-secondary"><th scope="row"><i class="bi bi-stopwatch me-1" aria-hidden="true"></i>Tempo</th><td>' + tempoTesteTxt + '</td><td>' + tempoRefTxt + '</td><td class="small">' + deltaTempoTxt + '</td></tr>' +
+        '<tr class="table-secondary"><th scope="row"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i>Data</th><td>' + det.dataTesteFmt + '</td><td>' + det.dataCalibragemFmt + '</td><td>—</td></tr>' +
+        '<tr><th scope="row">RMS</th><td>' + det.rmsMedio.toFixed(4) + '</td><td>' + rmsRef + '</td>' + htmlTdDelta(dRms, estiloDeltaPerc) + '</tr>' +
+        '<tr><th scope="row">Peak</th><td>' + det.peakMedio.toFixed(4) + '</td><td>' + peakRef + '</td>' + htmlTdDelta(dPeak, estiloDeltaPerc) + '</tr>' +
+        '<tr><th scope="row">Clip.</th><td>' + det.clipStr + '</td><td>' + clipRef + '</td>' + dClipTd + '</tr>' +
+        '<tr><th scope="row">SNR</th><td>' + det.snrMedio.toFixed(2) + '</td><td>' + snrRef + '</td>' + htmlTdDelta(dSnr, estiloDeltaSnrStr) + '</tr>' +
+        '</tbody></table></div>' +
+        '<p class="small text-muted mb-0 mt-2"><i class="bi bi-info-circle me-1" aria-hidden="true"></i>Tempo teste e calibragem: último − primeiro <code>Data/Hora</code> do CSV' +
+        (det.calibragemDuracaoReal ? '' : ' (calibragem antiga: estimativa por linhas até voltar a gravar com salvar_calibragem.py)') +
+        '. Δ RMS/Peak em %; Δ SNR em dB. Ref.: ' + (det.fonteCalibragem || '—') + '.</p>'
+      );
+    }
+
+    function abrirOuTogglePainelRef(chave, tr) {
+      var panel = document.getElementById('detalheRefPainel');
+      if (!panel) return;
+      if (refPainelAbertoChave === chave && panel.style.display !== 'none') {
+        fecharPainelRef();
+        return;
+      }
+      var det = refDetalhePorChave.get(chave);
+      if (!det) return;
+      refPainelAbertoChave = chave;
+      limparTrRefAtiva();
+      tr.classList.add('table-active');
+      document.getElementById('detalheRefTitulo').textContent = det.participante;
+      document.getElementById('detalheRefSub').textContent =
+        'Teste: ' + formatarDuracaoSeg(det.tempoTesteSeg) + ' · Calibragem: ' + formatarDuracaoSeg(det.tempoRefSeg) +
+        ' (gravada ' + det.dataCalibragemFmt + ')';
+      document.getElementById('detalheRefBody').innerHTML = renderPainelRefHtml(det);
+      panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function corFundoDeEstilo(estilo) {
+      if (!estilo) return '#ffffff';
+      if (estilo.indexOf('d4edda') !== -1) return '#d4edda';
+      if (estilo.indexOf('fff3cd') !== -1) return '#fff3cd';
+      if (estilo.indexOf('f8d7da') !== -1) return '#f8d7da';
+      return '#ffffff';
+    }
+
+    function tdRelatorioPdf(valor, estilo) {
+      return '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;background:' +
+        corFundoDeEstilo(estilo) + '">' + escapeHtml(valor) + '</td>';
+    }
+
+    function gerarHtmlRelatorioTecnico(det) {
+      var ref = det.refC;
+      var rmsRef = Number(ref.rms_medio).toFixed(4);
+      var peakRef = Number(ref.peak_medio).toFixed(4);
+      var snrRef = Number(ref.snr_medio).toFixed(2);
+      var clipRef = ref.clipping_pct_medio != null && ref.clipping_pct_medio !== ''
+        ? (+ref.clipping_pct_medio).toFixed(3) + '%'
+        : '—';
+      var dRms = deltaPercMedia(det.rmsMedio, ref.rms_medio);
+      var dPeak = deltaPercMedia(det.peakMedio, ref.peak_medio);
+      var dSnr = deltaSnr(det.snrMedio, ref.snr_medio);
+      var dClip = '—';
+      var estClip = '';
+      if (det.usaPctGrupo && ref.clipping_pct_medio != null && ref.clipping_pct_medio !== '') {
+        var dpp = det.clippingMedio - Number(ref.clipping_pct_medio);
+        dClip = dpp.toFixed(2) + ' pp';
+        if (Math.abs(dpp) <= 0.25) estClip = 'background:#d4edda;';
+        else if (Math.abs(dpp) <= 0.75) estClip = 'background:#fff3cd;';
+        else estClip = 'background:#f8d7da;';
+      }
+      var deltaTempo = det.tempoTesteSeg - det.tempoRefSeg;
+      var deltaTempoTxt = (det.tempoRefSeg > 0 || det.tempoTesteSeg > 0)
+        ? (deltaTempo >= 0 ? '+' : '-') + formatarDuracaoSeg(Math.abs(deltaTempo))
+        : '—';
+      var audioRef = (calibragemPorSala && calibragemPorSala.audio_referencia_arquivo)
+        ? calibragemPorSala.audio_referencia_arquivo
+        : '—';
+      var volPc = (calibragemPorSala && calibragemPorSala.volume_pc_percent != null)
+        ? calibragemPorSala.volume_pc_percent + '%'
+        : '—';
+      var agora = new Date();
+      var emitido = formatarDataHoraBr(
+        agora.getFullYear() + '-' +
+        String(agora.getMonth() + 1).padStart(2, '0') + '-' +
+        String(agora.getDate()).padStart(2, '0') + ' ' +
+        String(agora.getHours()).padStart(2, '0') + ':' +
+        String(agora.getMinutes()).padStart(2, '0')
+      );
+      var th = 'padding:8px 10px;border:1px solid #ccc;background:#f1f4f8;font-weight:600;font-size:11px;';
+      var thRow = 'padding:8px 10px;border:1px solid #ccc;background:#e9ecef;font-weight:600;text-align:left;';
+      var wrap = document.createElement('div');
+      wrap.style.cssText = 'font-family:Segoe UI,Arial,sans-serif;font-size:11px;color:#222;padding:16px 20px;width:190mm;';
+      wrap.innerHTML =
+        '<div style="background:#1e3a5f;color:#fff;padding:14px 16px;border-radius:4px;margin-bottom:16px;">' +
+        '<div style="font-size:10px;opacity:0.9;letter-spacing:0.06em;text-transform:uppercase;">Relatório técnico</div>' +
+        '<div style="font-size:18px;font-weight:600;margin-top:4px;">Qualidade de áudio — comparação com calibragem</div>' +
+        '</div>' +
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:14px;font-size:11px;">' +
+        '<tr><td style="' + thRow + 'width:32%">Sala</td><td style="padding:8px 10px;border:1px solid #ccc;"><strong>' + escapeHtml(det.participante) + '</strong></td></tr>' +
+        '<tr><td style="' + thRow + '">Nota (vs calibragem)</td><td style="padding:8px 10px;border:1px solid #ccc;font-size:16px;font-weight:700;">' + escapeHtml(det.nota) + '</td></tr>' +
+        '<tr><td style="' + thRow + '">Data do teste</td><td style="padding:8px 10px;border:1px solid #ccc;">' + escapeHtml(det.dataTesteFmt) + '</td></tr>' +
+        '<tr><td style="' + thRow + '">Calibragem gravada</td><td style="padding:8px 10px;border:1px solid #ccc;">' + escapeHtml(det.dataCalibragemFmt) + '</td></tr>' +
+        '<tr><td style="' + thRow + '">Áudio de referência</td><td style="padding:8px 10px;border:1px solid #ccc;">' + escapeHtml(audioRef) + ' · volume ' + escapeHtml(volPc) + '</td></tr>' +
+        '<tr><td style="' + thRow + '">Fonte calibragem</td><td style="padding:8px 10px;border:1px solid #ccc;">' + escapeHtml(det.fonteCalibragem || '—') + '</td></tr>' +
+        '<tr><td style="' + thRow + '">Relatório emitido</td><td style="padding:8px 10px;border:1px solid #ccc;">' + escapeHtml(emitido) + '</td></tr>' +
+        '</table>' +
+        '<div style="font-weight:600;margin:12px 0 8px;color:#1e3a5f;">Comparativo teste × referência</div>' +
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:12px;">' +
+        '<thead><tr>' +
+        '<th style="' + th + 'text-align:left;">Métrica</th>' +
+        '<th style="' + th + '">Teste</th>' +
+        '<th style="' + th + '">Ref. calibragem</th>' +
+        '<th style="' + th + '">Δ</th>' +
+        '</tr></thead><tbody>' +
+        '<tr><th style="' + thRow + '">Tempo</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(formatarDuracaoSeg(det.tempoTesteSeg)) + ' (' + det.nLinhasTeste + ' linhas)</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(formatarDuracaoSeg(det.tempoRefSeg)) + ' (' + det.nLinhasRef + ' linhas)</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(deltaTempoTxt) + '</td></tr>' +
+        '<tr><th style="' + thRow + '">Data</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(det.dataTesteFmt) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(det.dataCalibragemFmt) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">—</td></tr>' +
+        '<tr><th style="' + thRow + '">RMS</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + det.rmsMedio.toFixed(4) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + rmsRef + '</td>' +
+        tdRelatorioPdf(dRms, estiloDeltaPerc(dRms)) +
+        '<tr><th style="' + thRow + '">Peak</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + det.peakMedio.toFixed(4) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + peakRef + '</td>' +
+        tdRelatorioPdf(dPeak, estiloDeltaPerc(dPeak)) +
+        '<tr><th style="' + thRow + '">Clip.</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(det.clipStr) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + escapeHtml(clipRef) + '</td>' +
+        tdRelatorioPdf(dClip, estClip) +
+        '<tr><th style="' + thRow + '">SNR (dB)</th>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + det.snrMedio.toFixed(2) + '</td>' +
+        '<td style="padding:8px 10px;border:1px solid #ccc;text-align:center;">' + snrRef + '</td>' +
+        tdRelatorioPdf(dSnr, estiloDeltaSnrStr(dSnr)) +
+        '</tbody></table>' +
+        '<div style="font-size:9px;color:#555;line-height:1.45;border-top:1px solid #ddd;padding-top:10px;">' +
+        '<strong>Critérios da nota (vs calibragem):</strong> até 4 pontos — RMS ±20%, Peak ±25%, SNR ≥ ref.−3 dB, clipping ≤ ref.+0,5 pp. ' +
+        '4→A, 3→B, 2→C, 0–1→D. Verde/amarelo/vermelho nas células Δ: alinhado / intermédio / afastado da referência. ' +
+        'Tempo teste e calibragem: diferença entre primeiro e último registo Data/Hora no CSV.' +
+        '</div>';
+      return wrap;
+    }
+
+    function exportarRelatorioPdf() {
+      if (!refPainelAbertoChave) {
+        alert('Abra primeiro a comparação clicando numa sala com calibragem.');
+        return;
+      }
+      var det = refDetalhePorChave.get(refPainelAbertoChave);
+      if (!det) return;
+      if (typeof html2pdf === 'undefined') {
+        alert('Biblioteca PDF não carregada. Verifique a ligação à internet e recarregue a página.');
+        return;
+      }
+      var host = document.getElementById('relatorioPdfHost');
+      var el = gerarHtmlRelatorioTecnico(det);
+      host.innerHTML = '';
+      host.appendChild(el);
+      var nomeBase = 'relatorio_' + String(det.participante).replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '') +
+        '_' + String(det.dataTesteFmt).replace(/\./g, '-');
+      var btn = document.getElementById('detalheRefPdf');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> A gerar…';
+      }
+      html2pdf().set({
+        margin: [12, 12, 14, 12],
+        filename: nomeBase + '.pdf',
+        image: { type: 'jpeg', quality: 0.95 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      }).from(el).save().then(function() {
+        host.innerHTML = '';
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Guardar PDF';
+        }
+      }).catch(function(err) {
+        host.innerHTML = '';
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Guardar PDF';
+        }
+        console.error(err);
+        alert('Não foi possível gerar o PDF. Tente novamente ou use Imprimir → Guardar como PDF no browser.');
+      });
+    }
+
+    function renderTabelaMedias(data) {
+      // Agrupa por data (apenas dia) e por sala canónica (linhas sem match na lista são ignoradas)
+      const grupos = {};
+      data.forEach(row => {
+        const participante = resolverChaveParticipante(row['Participantes']);
+        if (participante == null) return;
+        const dia = row['Data/Hora'].slice(0, 10);
+        const chave = dia + '__' + participante;
+        if (!grupos[chave]) grupos[chave] = [];
+        grupos[chave].push(row);
+      });
+      const tbody = document.querySelector('#tabelaMedias tbody');
+      refDetalhePorChave.clear();
+      fecharPainelRef();
+      tbody.innerHTML = '';
+      const nLinhasCsv = data.filter(function(r) { return r['Data/Hora']; }).length;
+      const nLinhasComSalaCanonica = data.filter(function(r) {
+        return r['Data/Hora'] && resolverChaveParticipante(r['Participantes']) != null;
+      }).length;
+      const nGrupos = Object.keys(grupos).length;
+
+      let totalSalas = 0;
+
+      Object.entries(grupos).forEach(([chave, rows]) => {
+        const [dia, participante] = chave.split('__');
+        const rmsMedio = (rows.reduce((a, b) => a + (+b['RMS']), 0) / rows.length) || 0;
+        const peakMedio = (rows.reduce((a, b) => a + (+b['Peak']), 0) / rows.length) || 0;
+        const clippingMedio = clippingMedioParaGrupo(rows);
+        const snrMedio = (rows.reduce((a, b) => a + (+b['SNR']), 0) / rows.length) || 0;
+        const refC = refCalibragemDaSala(participante);
+        const usaPctGrupo = grupoUsaClippingPct(rows);
+        const nota = refC
+          ? notaVersusReferencia(refC, rmsMedio, peakMedio, snrMedio, clippingMedio, usaPctGrupo)
+          : conceitoNota(rmsMedio, snrMedio, clippingMedio, !usaPctGrupo);
+        // Calcular tempo de teste
+        const datas = rows.map(r => new Date(r['Data/Hora']));
+        const minData = new Date(Math.min(...datas));
+        const maxData = new Date(Math.max(...datas));
+        let tempoTesteSeg = 0;
+        if (datas.length > 1) {
+          tempoTesteSeg = Math.round((maxData - minData) / 1000); // em segundos
+        }
+        totalSalas++;
+        // Formata a data para dd-mm-aaaa
+        const [yyyy, mm, dd] = dia.split('-');
+        const dataFormatada = `${dd}-${mm}-${yyyy}`;
+        const tr = document.createElement('tr');
+        const rmsDentroPadrao = rmsMedio >= 0.15 && rmsMedio <= 0.4;
+        const snrDentroPadrao = snrMedio >= 20;
+        const clipStr = grupoUsaClippingPct(rows)
+          ? `${clippingMedio.toFixed(3)}%`
+          : `${clippingMedio.toFixed(2)}`;
+        var rmsEst = '';
+        var peakEst = '';
+        var snrEst = '';
+        var clipEst = '';
+        if (refC) {
+          rmsEst = estiloTesteRmsVsRef(rmsMedio, refC);
+          peakEst = estiloTestePeakVsRef(peakMedio, refC);
+          snrEst = estiloTesteSnrVsRef(snrMedio, refC);
+          clipEst = estiloTesteClipVsRef(clippingMedio, refC, usaPctGrupo);
+        } else {
+          if (rmsDentroPadrao) rmsEst = 'background:#d4edda;font-weight:bold;';
+          if (snrDentroPadrao) snrEst = 'background:#d4edda;font-weight:bold;';
+        }
+        const rmsTd = tdComEstilo(rmsMedio.toFixed(4), rmsEst);
+        const peakTd = tdComEstilo(peakMedio.toFixed(4), peakEst);
+        const snrTd = tdComEstilo(snrMedio.toFixed(2), snrEst);
+        const clipTdCell = tdComEstilo(clipStr, clipEst);
+        if (refC) {
+          tr.dataset.refChave = chave;
+          var nRef = Number(refC.n_linhas) || 0;
+          refDetalhePorChave.set(chave, {
+            participante: participante,
+            dataFormatada: dataFormatada,
+            refC: refC,
+            rmsMedio: rmsMedio,
+            peakMedio: peakMedio,
+            snrMedio: snrMedio,
+            clippingMedio: clippingMedio,
+            usaPctGrupo: usaPctGrupo,
+            clipStr: clipStr,
+            tempoTesteSeg: tempoTesteSeg,
+            nLinhasTeste: rows.length,
+            tempoRefSeg: tempoSegCalibragem(refC),
+            nLinhasRef: nRef,
+            dataTesteFmt: dataFormatada,
+            dataCalibragemFmt: formatarDataHoraBr(refC.data_fim || refC.data_calibragem),
+            dataCalibragemInicioFmt: refC.data_inicio ? formatarDataHoraBr(refC.data_inicio) : '',
+            fonteCalibragem: refC.fonte_csv || '',
+            calibragemDuracaoReal: calibragemUsaDuracaoReal(refC),
+            nota: nota
+          });
+        }
+        const marcaRef = refC
+          ? '<i class="bi bi-bookmarks-fill text-primary ms-1" style="font-size:0.85em" title="Clique na sala para ver referência"></i>'
+          : '';
+        tr.innerHTML = `<td><span class="text-nowrap"><i class="bi bi-calendar3 text-secondary me-1" style="font-size:0.88em" aria-hidden="true"></i>${dataFormatada}</span></td><td class="text-start"><span class="text-nowrap"><i class="bi bi-building text-secondary me-1" style="font-size:0.88em" aria-hidden="true"></i>${participante}</span>${marcaRef}</td>${rmsTd}${peakTd}${clipTdCell}${snrTd}<td class="text-center">${htmlBadgeNota(nota)}</td><td>${tempoTesteSeg}</td>`;
+        tbody.appendChild(tr);
+      });
+
+      // Atualizar painel de resumo
+      const resumoDiv = document.getElementById('resumoDashboard');
+      if (totalSalas > 0) {
+        resumoDiv.className = 'alert alert-info d-flex flex-wrap gap-3 align-items-stretch';
+        resumoDiv.innerHTML =
+          '<div class="dash-stat"><span class="lbl"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> Salas testadas</span><span class="val">' + totalSalas + '</span></div>';
+        resumoDiv.style.display = '';
+      } else {
+        if (nLinhasCsv > 0 && nGrupos === 0) {
+          resumoDiv.innerHTML =
+            '<div class="dash-stat border-warning" style="border-color: rgba(255,193,7,0.45);"><span class="lbl"><i class="bi bi-exclamation-triangle-fill text-warning" aria-hidden="true"></i> Aviso</span><span class="val fw-normal" style="font-size:0.95rem;">Nenhuma sala reconhecida neste CSV.</span></div>';
+          resumoDiv.className = 'alert alert-warning d-flex flex-wrap gap-2 align-items-stretch';
+          resumoDiv.style.display = '';
+        } else {
+          resumoDiv.style.display = 'none';
+        }
+      }
+    }
+  </script>
+  <script>
+let sortDirection = Array(8).fill(true); // true: crescente, false: decrescente
+function sortTable(n) {
+  const table = document.getElementById("tabelaMedias");
+  let switching = true;
+  let dir = sortDirection[n] ? "asc" : "desc";
+  sortDirection[n] = !sortDirection[n];
+  while (switching) {
+    switching = false;
+    let rows = table.rows;
+    let switchIdx = -1;
+    for (let i = 1; i < (rows.length - 1); i++) {
+      let shouldSwitch = false;
+      let x = rows[i].getElementsByTagName("TD")[n];
+      let y = rows[i + 1].getElementsByTagName("TD")[n];
+      let xContent = x.textContent || x.innerText;
+      let yContent = y.textContent || y.innerText;
+      // Tenta converter para número, se possível
+      let xNum = parseFloat(String(xContent).replace('%', '').replace(',', '.'));
+      let yNum = parseFloat(String(yContent).replace('%', '').replace(',', '.'));
+      if (!isNaN(xNum) && !isNaN(yNum)) {
+        if ((dir === "asc" && xNum > yNum) || (dir === "desc" && xNum < yNum)) {
+          shouldSwitch = true;
+        }
+      } else {
+        if ((dir === "asc" && xContent > yContent) || (dir === "desc" && xContent < yContent)) {
+          shouldSwitch = true;
+        }
+      }
+      if (shouldSwitch) {
+        switchIdx = i;
+        break;
+      }
+    }
+    if (switchIdx !== -1) {
+      rows[switchIdx].parentNode.insertBefore(rows[switchIdx + 1], rows[switchIdx]);
+      switching = true;
+    }
+  }
+}
+</script>
+</body>
+</html> 

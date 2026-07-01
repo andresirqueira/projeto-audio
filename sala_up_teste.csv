@@ -1,0 +1,636 @@
+Data/Hora,RMS,Peak,Clipping,Clipping_pct,SNR,Diagnóstico,Participantes
+2026-05-25 08:52:36,0.0034,0.0392,0,0.0000,25.58,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:52:39,0.0126,0.1714,0,0.0000,32.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:52:41,0.0132,0.1710,0,0.0000,42.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:52:44,0.0315,0.1754,0,0.0000,23.53,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:52:46,0.0262,0.1715,0,0.0000,42.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:52:48,0.0068,0.0563,0,0.0000,28.22,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:52:51,0.0034,0.0399,0,0.0000,24.12,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:52:53,0.0060,0.0410,0,0.0000,31.55,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:52:55,0.0038,0.0429,0,0.0000,28.73,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:52:58,0.0157,0.1557,0,0.0000,30.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:00,0.0136,0.1716,0,0.0000,34.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:03,0.0253,0.1893,0,0.0000,26.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:05,0.0063,0.0423,0,0.0000,33.16,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:07,0.0061,0.0579,0,0.0000,38.59,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:10,0.0081,0.0601,0,0.0000,25.23,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:12,0.0115,0.1182,0,0.0000,20.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:14,0.0140,0.1216,0,0.0000,30.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:17,0.0235,0.1863,0,0.0000,41.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:19,0.0113,0.0786,0,0.0000,38.61,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:21,0.0126,0.1124,0,0.0000,40.98,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:24,0.0177,0.1575,0,0.0000,23.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:26,0.0047,0.0327,0,0.0000,34.17,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:28,0.0060,0.0456,0,0.0000,34.53,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:31,0.0127,0.0934,0,0.0000,31.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:33,0.0207,0.1953,0,0.0000,31.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:36,0.0084,0.0566,0,0.0000,35.83,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:38,0.0128,0.1030,0,0.0000,20.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:41,0.0206,0.1917,0,0.0000,24.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:43,0.0105,0.1857,0,0.0000,33.17,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:45,0.0252,0.1879,0,0.0000,32.34,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:48,0.0048,0.0580,0,0.0000,29.73,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:50,0.0279,0.1880,0,0.0000,25.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:53:52,0.0093,0.0666,0,0.0000,35.21,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:55,0.0066,0.0716,0,0.0000,30.38,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:53:57,0.0260,0.1720,0,0.0000,33.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:00,0.0133,0.1742,0,0.0000,37.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:02,0.0280,0.1873,0,0.0000,29.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:04,0.0240,0.1864,0,0.0000,26.04,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:07,0.0133,0.1277,0,0.0000,37.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:09,0.0047,0.0474,0,0.0000,30.61,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:54:11,0.0185,0.1855,0,0.0000,18.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:14,0.0167,0.1861,0,0.0000,33.58,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:16,0.0294,0.1864,0,0.0000,27.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:18,0.0267,0.1864,0,0.0000,19.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:21,0.0138,0.1862,0,0.0000,39.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:23,0.0205,0.1717,0,0.0000,35.11,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:25,0.0122,0.1140,0,0.0000,26.76,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:28,0.0077,0.0516,0,0.0000,38.22,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:54:30,0.0164,0.1324,0,0.0000,33.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:33,0.0047,0.0575,0,0.0000,6.60,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:54:35,0.0154,0.1600,0,0.0000,34.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:37,0.0208,0.1860,0,0.0000,39.57,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:40,0.0058,0.0623,0,0.0000,35.67,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:54:42,0.0260,0.1865,0,0.0000,40.40,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:44,0.0104,0.1196,0,0.0000,24.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:47,0.0234,0.1796,0,0.0000,38.32,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:49,0.0180,0.1927,0,0.0000,16.48,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:52,0.0109,0.0808,0,0.0000,40.56,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:54,0.0139,0.1097,0,0.0000,34.25,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:54:56,0.0055,0.0553,0,0.0000,32.29,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:54:59,0.0001,0.0005,0,0.0000,-2.17,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:55:01,0.0204,0.1901,0,0.0000,21.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:03,0.0117,0.1015,0,0.0000,37.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:06,0.0148,0.1372,0,0.0000,37.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:08,0.0146,0.1077,0,0.0000,29.26,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:10,0.0238,0.1702,0,0.0000,38.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:13,0.0046,0.0430,0,0.0000,35.80,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:55:15,0.0359,0.1865,0,0.0000,15.59,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:18,0.0109,0.1856,0,0.0000,9.80,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:20,0.0380,0.1800,0,0.0000,25.74,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:22,0.0075,0.0550,0,0.0000,36.60,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:55:25,0.0260,0.1866,0,0.0000,46.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:27,0.0236,0.1856,0,0.0000,43.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:29,0.0118,0.0929,0,0.0000,41.32,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:32,0.0015,0.0141,0,0.0000,19.65,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:55:34,0.0245,0.1633,0,0.0000,40.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:36,0.0216,0.1768,0,0.0000,29.47,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:39,0.0074,0.0637,0,0.0000,33.18,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:55:41,0.0136,0.1060,0,0.0000,22.29,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:43,0.0254,0.1874,0,0.0000,21.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:46,0.0189,0.1653,0,0.0000,21.58,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:48,0.0261,0.1876,0,0.0000,26.57,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:50,0.0188,0.1826,0,0.0000,32.22,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:53,0.0392,0.1876,0,0.0000,41.13,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:55,0.0322,0.1884,0,0.0000,36.90,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:55:58,0.0170,0.1859,0,0.0000,38.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:00,0.0232,0.1847,0,0.0000,36.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:02,0.0260,0.1884,0,0.0000,39.04,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:05,0.0241,0.1845,0,0.0000,31.05,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:07,0.0307,0.1919,0,0.0000,21.86,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:09,0.0341,0.1866,0,0.0000,33.41,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:12,0.0207,0.1686,0,0.0000,30.91,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:14,0.0167,0.1153,0,0.0000,31.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:16,0.0182,0.1838,0,0.0000,42.37,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:19,0.0020,0.0256,0,0.0000,5.12,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:21,0.0310,0.1847,0,0.0000,42.27,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:24,0.0001,0.0005,0,0.0000,-2.40,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:26,0.0237,0.1872,0,0.0000,31.44,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:28,0.0130,0.1022,0,0.0000,38.26,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:31,0.0145,0.1529,0,0.0000,30.91,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:33,0.0042,0.0507,0,0.0000,30.38,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:35,0.0112,0.1066,0,0.0000,28.32,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:38,0.0168,0.1394,0,0.0000,39.10,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:40,0.0189,0.1088,0,0.0000,38.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:42,0.0148,0.1377,0,0.0000,23.80,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:45,0.0149,0.1184,0,0.0000,41.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:47,0.0001,0.0012,0,0.0000,-2.22,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:49,0.0099,0.0952,0,0.0000,36.12,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:52,0.0001,0.0005,0,0.0000,-2.25,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:54,0.0096,0.0598,0,0.0000,38.66,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:56:56,0.0105,0.1199,0,0.0000,40.63,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:56:59,0.0259,0.1845,0,0.0000,42.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:01,0.0001,0.0011,0,0.0000,-2.13,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:57:04,0.0318,0.1862,0,0.0000,33.40,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:06,0.0234,0.1850,0,0.0000,32.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:08,0.0015,0.0307,0,0.0000,-2.37,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:57:11,0.0231,0.1707,0,0.0000,31.29,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:13,0.0156,0.1266,0,0.0000,36.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:15,0.0225,0.1891,0,0.0000,29.96,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:18,0.0229,0.1857,0,0.0000,46.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:20,0.0276,0.1874,0,0.0000,36.74,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:22,0.0153,0.1611,0,0.0000,42.91,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:25,0.0258,0.1871,0,0.0000,25.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:27,0.0193,0.1856,0,0.0000,44.84,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:29,0.0214,0.1884,0,0.0000,29.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:32,0.0252,0.1908,0,0.0000,17.96,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:34,0.0276,0.1905,0,0.0000,30.18,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:37,0.0088,0.0890,0,0.0000,22.63,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:57:39,0.0251,0.1707,0,0.0000,48.37,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:41,0.0006,0.0077,0,0.0000,-1.46,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:57:44,0.0263,0.1914,0,0.0000,24.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:46,0.0206,0.1842,0,0.0000,42.96,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:48,0.0227,0.1649,0,0.0000,38.54,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:51,0.0166,0.1914,0,0.0000,26.94,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:53,0.0113,0.1189,0,0.0000,31.34,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:57:55,0.0029,0.0442,0,0.0000,18.53,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:57:58,0.0191,0.1845,0,0.0000,39.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:00,0.0232,0.1874,0,0.0000,47.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:03,0.0158,0.1307,0,0.0000,40.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:05,0.0236,0.1871,0,0.0000,42.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:07,0.0149,0.1043,0,0.0000,36.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:10,0.0118,0.0923,0,0.0000,35.02,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:12,0.0317,0.1898,0,0.0000,41.31,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:14,0.0177,0.1700,0,0.0000,30.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:17,0.0118,0.1333,0,0.0000,31.04,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:19,0.0207,0.1862,0,0.0000,23.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:22,0.0071,0.0523,0,0.0000,33.25,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:58:24,0.0168,0.1718,0,0.0000,43.60,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:26,0.0248,0.1854,0,0.0000,22.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:29,0.0107,0.1186,0,0.0000,37.95,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:31,0.0264,0.1891,0,0.0000,36.20,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:33,0.0318,0.1896,0,0.0000,23.43,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:36,0.0174,0.1302,0,0.0000,34.85,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:38,0.0192,0.1408,0,0.0000,26.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:40,0.0045,0.0403,0,0.0000,14.78,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:58:43,0.0155,0.1480,0,0.0000,23.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:45,0.0189,0.1902,0,0.0000,27.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:48,0.0154,0.1793,0,0.0000,42.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:50,0.0255,0.1889,0,0.0000,39.14,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:52,0.0150,0.1765,0,0.0000,21.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:55,0.0218,0.1892,0,0.0000,22.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:57,0.0145,0.1817,0,0.0000,27.05,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:58:59,0.0283,0.1857,0,0.0000,43.41,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:02,0.0164,0.1753,0,0.0000,31.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:04,0.0225,0.1871,0,0.0000,30.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:06,0.0173,0.1882,0,0.0000,33.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:09,0.0081,0.0761,0,0.0000,33.93,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:59:11,0.0205,0.1880,0,0.0000,37.47,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:13,0.0128,0.1139,0,0.0000,42.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:16,0.0285,0.1890,0,0.0000,24.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:18,0.0233,0.1870,0,0.0000,36.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:21,0.0248,0.1833,0,0.0000,27.62,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:23,0.0122,0.1302,0,0.0000,38.06,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:25,0.0180,0.1890,0,0.0000,34.89,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:28,0.0366,0.1880,0,0.0000,37.46,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:30,0.0149,0.1323,0,0.0000,20.59,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:33,0.0053,0.0406,0,0.0000,30.51,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:59:35,0.0247,0.1865,0,0.0000,47.01,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:37,0.0285,0.1885,0,0.0000,21.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:40,0.0242,0.1884,0,0.0000,40.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:42,0.0280,0.1842,0,0.0000,24.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:44,0.0215,0.1688,0,0.0000,20.84,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:47,0.0029,0.0272,0,0.0000,19.14,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:59:49,0.0075,0.0840,0,0.0000,32.10,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 08:59:52,0.0245,0.1894,0,0.0000,46.58,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:54,0.0243,0.1884,0,0.0000,38.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:56,0.0134,0.1123,0,0.0000,37.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 08:59:59,0.0306,0.1885,0,0.0000,37.76,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:01,0.0235,0.1897,0,0.0000,23.31,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:03,0.0208,0.1821,0,0.0000,24.74,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:06,0.0237,0.1873,0,0.0000,27.74,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:08,0.0268,0.1875,0,0.0000,43.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:11,0.0202,0.1878,0,0.0000,19.95,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:13,0.0217,0.1855,0,0.0000,36.01,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:15,0.0218,0.1867,0,0.0000,28.53,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:18,0.0133,0.1508,0,0.0000,45.00,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:20,0.0266,0.1849,0,0.0000,23.95,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:22,0.0102,0.1065,0,0.0000,42.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:25,0.0196,0.1861,0,0.0000,33.03,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:27,0.0203,0.1975,0,0.0000,26.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:29,0.0175,0.1489,0,0.0000,26.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:32,0.0186,0.1568,0,0.0000,34.92,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:34,0.0187,0.1870,0,0.0000,28.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:36,0.0117,0.1207,0,0.0000,26.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:39,0.0251,0.1868,0,0.0000,29.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:41,0.0314,0.1865,0,0.0000,22.34,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:44,0.0001,0.0005,0,0.0000,-2.53,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:00:46,0.0241,0.1748,0,0.0000,28.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:48,0.0317,0.1872,0,0.0000,42.31,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:51,0.0213,0.1842,0,0.0000,45.20,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:53,0.0004,0.0066,0,0.0000,-2.44,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:00:56,0.0131,0.1320,0,0.0000,32.95,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:00:58,0.0176,0.1280,0,0.0000,32.90,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:00,0.0087,0.0929,0,0.0000,40.12,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:01:03,0.0121,0.1725,0,0.0000,26.85,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:05,0.0350,0.1875,0,0.0000,39.87,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:07,0.0280,0.1507,0,0.0000,27.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:10,0.0229,0.1687,0,0.0000,22.57,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:12,0.0194,0.1715,0,0.0000,29.25,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:14,0.0201,0.1845,0,0.0000,37.89,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:17,0.0236,0.1881,0,0.0000,49.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:19,0.0188,0.1797,0,0.0000,44.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:22,0.0247,0.1902,0,0.0000,38.60,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:24,0.0344,0.1910,0,0.0000,32.34,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:26,0.0118,0.1063,0,0.0000,29.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:29,0.0155,0.1242,0,0.0000,42.18,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:31,0.0231,0.1875,0,0.0000,33.95,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:33,0.0086,0.0815,0,0.0000,32.05,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:01:36,0.0213,0.1869,0,0.0000,29.14,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:38,0.0109,0.1115,0,0.0000,25.62,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:41,0.0207,0.1972,0,0.0000,35.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:43,0.0254,0.1862,0,0.0000,42.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:45,0.0162,0.1311,0,0.0000,21.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:48,0.0156,0.1204,0,0.0000,41.23,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:50,0.0196,0.1863,0,0.0000,42.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:52,0.0260,0.1854,0,0.0000,25.96,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:55,0.0207,0.1918,0,0.0000,43.84,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:01:57,0.0027,0.0307,0,0.0000,27.99,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:00,0.0052,0.0707,0,0.0000,12.14,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:02,0.0286,0.1873,0,0.0000,47.14,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:04,0.0214,0.1638,0,0.0000,45.18,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:07,0.0144,0.1836,0,0.0000,35.03,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:09,0.0074,0.0697,0,0.0000,38.22,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:11,0.0130,0.1104,0,0.0000,35.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:14,0.0271,0.1866,0,0.0000,36.49,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:16,0.0258,0.1862,0,0.0000,42.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:18,0.0051,0.0540,0,0.0000,32.67,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:21,0.0044,0.0448,0,0.0000,20.63,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:23,0.0359,0.1933,0,0.0000,25.85,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:25,0.0122,0.1846,0,0.0000,25.14,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:28,0.0228,0.1759,0,0.0000,22.09,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:30,0.0318,0.1887,0,0.0000,37.79,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:33,0.0142,0.1122,0,0.0000,36.23,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:35,0.0111,0.1223,0,0.0000,28.96,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:37,0.0080,0.0705,0,0.0000,25.45,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:40,0.0198,0.1861,0,0.0000,41.04,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:42,0.0081,0.0573,0,0.0000,35.28,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:02:44,0.0305,0.1855,0,0.0000,29.06,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:47,0.0124,0.1097,0,0.0000,26.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:49,0.0142,0.1366,0,0.0000,37.44,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:51,0.0217,0.1892,0,0.0000,33.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:54,0.0253,0.1859,0,0.0000,30.59,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:56,0.0201,0.1377,0,0.0000,45.93,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:02:58,0.0221,0.1911,0,0.0000,24.88,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:01,0.0166,0.1258,0,0.0000,20.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:03,0.0221,0.1859,0,0.0000,35.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:06,0.0068,0.0763,0,0.0000,38.41,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:03:08,0.0161,0.1696,0,0.0000,43.56,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:10,0.0239,0.1943,0,0.0000,30.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:13,0.0197,0.1390,0,0.0000,36.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:15,0.0264,0.1891,0,0.0000,36.02,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:17,0.0245,0.1937,0,0.0000,24.23,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:20,0.0113,0.1301,0,0.0000,32.74,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:22,0.0168,0.1326,0,0.0000,20.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:24,0.0103,0.1191,0,0.0000,34.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:27,0.0168,0.1825,0,0.0000,47.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:29,0.0298,0.1874,0,0.0000,40.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:31,0.0246,0.1859,0,0.0000,49.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:34,0.0301,0.1886,0,0.0000,20.53,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:36,0.0097,0.1180,0,0.0000,30.09,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:03:39,0.0224,0.1780,0,0.0000,40.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:41,0.0250,0.1726,0,0.0000,36.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:43,0.0225,0.1731,0,0.0000,22.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:46,0.0045,0.0698,0,0.0000,21.90,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:03:48,0.0188,0.1858,0,0.0000,40.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:50,0.0059,0.0823,0,0.0000,31.47,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:03:53,0.0250,0.1875,0,0.0000,22.02,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:55,0.0215,0.1684,0,0.0000,24.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:03:57,0.0002,0.0021,0,0.0000,10.75,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:00,0.0079,0.0682,0,0.0000,37.23,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:02,0.0118,0.1122,0,0.0000,35.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:05,0.0197,0.1842,0,0.0000,32.52,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:07,0.0246,0.1856,0,0.0000,47.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:09,0.0133,0.1623,0,0.0000,42.48,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:12,0.0297,0.1909,0,0.0000,38.41,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:14,0.0207,0.1884,0,0.0000,38.85,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:16,0.0040,0.0398,0,0.0000,17.99,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:19,0.0348,0.1925,0,0.0000,18.31,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:21,0.0298,0.1872,0,0.0000,30.61,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:23,0.0269,0.1845,0,0.0000,31.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:26,0.0124,0.1848,0,0.0000,30.26,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:28,0.0181,0.1598,0,0.0000,40.53,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:31,0.0224,0.1871,0,0.0000,39.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:33,0.0274,0.1869,0,0.0000,32.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:35,0.0124,0.1336,0,0.0000,34.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:38,0.0201,0.1588,0,0.0000,29.23,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:40,0.0030,0.0512,0,0.0000,9.10,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:42,0.0298,0.1879,0,0.0000,36.44,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:45,0.0052,0.0795,0,0.0000,35.56,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:47,0.0092,0.1851,0,0.0000,29.60,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:50,0.0001,0.0005,0,0.0000,-2.31,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:04:52,0.0300,0.1877,0,0.0000,23.71,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:54,0.0260,0.1862,0,0.0000,19.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:57,0.0230,0.1469,0,0.0000,35.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:04:59,0.0200,0.1832,0,0.0000,44.99,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:01,0.0160,0.1268,0,0.0000,42.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:04,0.0253,0.1899,0,0.0000,36.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:06,0.0222,0.1866,0,0.0000,28.94,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:08,0.0001,0.0005,0,0.0000,-2.28,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:05:11,0.0173,0.1793,0,0.0000,24.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:13,0.0251,0.1847,0,0.0000,43.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:15,0.0264,0.1875,0,0.0000,45.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:18,0.0275,0.1904,0,0.0000,41.54,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:20,0.0164,0.1810,0,0.0000,21.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:22,0.0240,0.1923,0,0.0000,14.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:25,0.0139,0.1859,0,0.0000,35.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:27,0.0113,0.1074,0,0.0000,32.61,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:29,0.0109,0.1255,0,0.0000,38.41,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:32,0.0157,0.1106,0,0.0000,40.60,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:34,0.0335,0.1914,0,0.0000,27.12,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:37,0.0125,0.0784,0,0.0000,41.87,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:39,0.0294,0.1865,0,0.0000,30.50,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:41,0.0258,0.1857,0,0.0000,45.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:44,0.0293,0.1711,0,0.0000,48.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:46,0.0023,0.0229,0,0.0000,26.53,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:05:48,0.0175,0.1671,0,0.0000,39.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:51,0.0164,0.1483,0,0.0000,31.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:53,0.0192,0.1884,0,0.0000,24.73,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:55,0.0170,0.1824,0,0.0000,24.58,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:05:58,0.0258,0.1909,0,0.0000,27.62,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:00,0.0180,0.1278,0,0.0000,41.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:02,0.0282,0.1877,0,0.0000,28.76,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:05,0.0138,0.1870,0,0.0000,13.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:07,0.0208,0.1862,0,0.0000,42.03,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:09,0.0177,0.1853,0,0.0000,36.98,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:12,0.0232,0.1910,0,0.0000,29.57,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:14,0.0161,0.1610,0,0.0000,46.17,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:16,0.0172,0.1873,0,0.0000,33.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:19,0.0221,0.1850,0,0.0000,24.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:21,0.0116,0.0961,0,0.0000,24.63,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:23,0.0276,0.1890,0,0.0000,37.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:26,0.0177,0.1886,0,0.0000,23.20,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:28,0.0160,0.1566,0,0.0000,38.05,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:30,0.0255,0.1854,0,0.0000,24.34,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:33,0.0253,0.1849,0,0.0000,39.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:35,0.0263,0.1784,0,0.0000,46.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:37,0.0162,0.1724,0,0.0000,23.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:40,0.0128,0.1443,0,0.0000,34.22,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:42,0.0280,0.1885,0,0.0000,30.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:45,0.0083,0.0953,0,0.0000,35.25,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:06:47,0.0118,0.1164,0,0.0000,29.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:49,0.0369,0.1877,0,0.0000,32.63,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:52,0.0262,0.1885,0,0.0000,28.23,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:54,0.0220,0.1874,0,0.0000,18.17,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:56,0.0198,0.1879,0,0.0000,33.98,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:06:59,0.0132,0.1452,0,0.0000,38.17,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:01,0.0204,0.1860,0,0.0000,38.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:03,0.0108,0.0930,0,0.0000,29.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:06,0.0142,0.1634,0,0.0000,39.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:08,0.0066,0.1150,0,0.0000,23.72,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:07:10,0.0277,0.1881,0,0.0000,22.93,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:13,0.0204,0.1627,0,0.0000,29.31,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:15,0.0213,0.1937,0,0.0000,24.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:18,0.0258,0.1902,0,0.0000,15.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:20,0.0151,0.1866,0,0.0000,41.18,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:22,0.0080,0.0894,0,0.0000,23.21,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:07:25,0.0237,0.1872,0,0.0000,28.25,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:27,0.0237,0.1867,0,0.0000,24.88,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:29,0.0201,0.1879,0,0.0000,31.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:32,0.0303,0.1871,0,0.0000,27.93,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:34,0.0130,0.1004,0,0.0000,30.06,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:36,0.0253,0.1893,0,0.0000,38.46,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:39,0.0318,0.1897,0,0.0000,23.72,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:41,0.0029,0.0543,0,0.0000,1.75,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:07:44,0.0309,0.1884,0,0.0000,33.48,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:46,0.0302,0.1931,0,0.0000,22.65,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:48,0.0048,0.0770,0,0.0000,16.92,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:07:51,0.0287,0.1978,0,0.0000,19.93,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:53,0.0276,0.1924,0,0.0000,26.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:07:55,0.0055,0.0716,0,0.0000,31.66,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:07:58,0.0065,0.0744,0,0.0000,38.16,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:08:00,0.0333,0.1884,0,0.0000,35.84,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:02,0.0186,0.1483,0,0.0000,35.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:05,0.0163,0.1362,0,0.0000,36.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:07,0.0173,0.1659,0,0.0000,34.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:09,0.0104,0.0895,0,0.0000,30.31,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:12,0.0245,0.1851,0,0.0000,29.76,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:14,0.0181,0.1321,0,0.0000,31.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:16,0.0260,0.1778,0,0.0000,28.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:19,0.0285,0.1887,0,0.0000,25.01,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:21,0.0321,0.1875,0,0.0000,24.77,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:24,0.0139,0.1208,0,0.0000,40.89,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:26,0.0328,0.1928,0,0.0000,44.10,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:28,0.0163,0.1292,0,0.0000,32.37,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:31,0.0179,0.1484,0,0.0000,36.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:33,0.0249,0.1853,0,0.0000,24.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:35,0.0018,0.0167,0,0.0000,19.93,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:08:38,0.0422,0.1873,0,0.0000,25.57,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:40,0.0164,0.1670,0,0.0000,36.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:42,0.0207,0.1871,0,0.0000,32.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:45,0.0272,0.1940,0,0.0000,22.80,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:47,0.0270,0.1869,0,0.0000,19.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:50,0.0207,0.1873,0,0.0000,28.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:52,0.0301,0.1844,0,0.0000,25.71,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:54,0.0092,0.0728,0,0.0000,27.60,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:08:57,0.0245,0.1880,0,0.0000,31.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:08:59,0.0204,0.1848,0,0.0000,41.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:02,0.0162,0.1470,0,0.0000,26.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:04,0.0285,0.1903,0,0.0000,34.72,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:06,0.0236,0.1973,0,0.0000,26.87,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:09,0.0196,0.1738,0,0.0000,34.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:11,0.0186,0.1501,0,0.0000,20.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:13,0.0242,0.1815,0,0.0000,20.94,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:16,0.0229,0.1870,0,0.0000,32.01,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:18,0.0268,0.1881,0,0.0000,37.11,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:21,0.0208,0.1796,0,0.0000,25.22,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:23,0.0287,0.1839,0,0.0000,39.61,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:25,0.0196,0.1866,0,0.0000,34.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:28,0.0017,0.0324,0,0.0000,2.03,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:09:30,0.0011,0.0222,0,0.0000,-2.33,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:09:32,0.0117,0.1540,0,0.0000,34.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:35,0.0310,0.1877,0,0.0000,40.52,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:37,0.0264,0.1880,0,0.0000,27.49,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:39,0.0048,0.1011,0,0.0000,3.89,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:09:42,0.0220,0.1855,0,0.0000,35.07,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:44,0.0132,0.1725,0,0.0000,23.15,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:47,0.0182,0.1850,0,0.0000,41.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:49,0.0243,0.1870,0,0.0000,44.84,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:51,0.0174,0.1467,0,0.0000,41.53,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:54,0.0269,0.1882,0,0.0000,33.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:56,0.0246,0.1855,0,0.0000,39.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:09:58,0.0231,0.1870,0,0.0000,27.48,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:01,0.0191,0.1484,0,0.0000,31.56,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:03,0.0263,0.1894,0,0.0000,23.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:06,0.0162,0.1892,0,0.0000,35.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:08,0.0191,0.1317,0,0.0000,33.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:10,0.0042,0.0266,0,0.0000,32.55,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:13,0.0084,0.0891,0,0.0000,36.05,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:15,0.0362,0.1960,0,0.0000,19.92,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:17,0.0321,0.1856,0,0.0000,45.67,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:20,0.0169,0.1488,0,0.0000,24.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:22,0.0016,0.0121,0,0.0000,23.17,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:24,0.0272,0.1896,0,0.0000,21.09,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:27,0.0263,0.1844,0,0.0000,34.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:29,0.0215,0.1620,0,0.0000,23.88,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:32,0.0025,0.0633,0,0.0000,3.34,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:34,0.0170,0.1862,0,0.0000,30.90,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:36,0.0213,0.1606,0,0.0000,20.99,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:39,0.0236,0.1852,0,0.0000,40.04,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:41,0.0246,0.1862,0,0.0000,37.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:43,0.0165,0.1860,0,0.0000,41.41,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:46,0.0254,0.1881,0,0.0000,24.44,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:48,0.0001,0.0005,0,0.0000,-2.60,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:50,0.0030,0.0438,0,0.0000,32.82,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:10:53,0.0109,0.1214,0,0.0000,26.12,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:55,0.0193,0.1503,0,0.0000,41.78,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:10:58,0.0349,0.1895,0,0.0000,20.45,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:00,0.0280,0.1889,0,0.0000,16.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:02,0.0203,0.1912,0,0.0000,23.27,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:05,0.0133,0.1271,0,0.0000,28.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:07,0.0255,0.1853,0,0.0000,40.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:09,0.0207,0.1838,0,0.0000,41.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:12,0.0203,0.1877,0,0.0000,33.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:14,0.0205,0.1837,0,0.0000,31.69,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:17,0.0328,0.1850,0,0.0000,39.91,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:19,0.0181,0.1897,0,0.0000,25.47,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:21,0.0251,0.1851,0,0.0000,39.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:24,0.0020,0.0345,0,0.0000,26.59,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:11:26,0.0038,0.0438,0,0.0000,21.56,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:11:28,0.0061,0.0469,0,0.0000,32.13,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:11:31,0.0255,0.1898,0,0.0000,29.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:33,0.0253,0.1869,0,0.0000,38.66,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:35,0.0185,0.1193,0,0.0000,20.50,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:38,0.0264,0.1842,0,0.0000,25.80,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:40,0.0135,0.1546,0,0.0000,26.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:43,0.0309,0.1991,0,0.0000,21.52,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:45,0.0110,0.1707,0,0.0000,34.75,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:47,0.0257,0.1911,0,0.0000,24.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:50,0.0214,0.1890,0,0.0000,21.44,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:52,0.0240,0.1895,0,0.0000,43.64,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:54,0.0204,0.1891,0,0.0000,30.67,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:11:57,0.0097,0.0856,0,0.0000,32.69,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:11:59,0.0193,0.1742,0,0.0000,14.00,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:01,0.0313,0.1861,0,0.0000,20.79,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:04,0.0072,0.1038,0,0.0000,39.68,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:06,0.0246,0.1843,0,0.0000,29.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:08,0.0078,0.0702,0,0.0000,37.27,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:11,0.0179,0.1870,0,0.0000,42.80,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:13,0.0129,0.1275,0,0.0000,31.64,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:15,0.0038,0.0309,0,0.0000,17.19,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:18,0.0093,0.0951,0,0.0000,29.82,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:20,0.0248,0.1885,0,0.0000,30.69,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:22,0.0290,0.1861,0,0.0000,21.56,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:25,0.0001,0.0006,0,0.0000,-0.59,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:27,0.0234,0.1760,0,0.0000,32.28,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:30,0.0085,0.1347,0,0.0000,32.67,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:32,0.0086,0.0667,0,0.0000,25.51,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:34,0.0080,0.0607,0,0.0000,25.18,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:37,0.0059,0.0525,0,0.0000,21.05,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:39,0.0250,0.1860,0,0.0000,43.99,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:41,0.0320,0.1854,0,0.0000,35.39,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:44,0.0001,0.0009,0,0.0000,-2.26,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:46,0.0211,0.1600,0,0.0000,28.39,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:48,0.0258,0.1878,0,0.0000,40.19,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:51,0.0228,0.1844,0,0.0000,22.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:12:53,0.0059,0.0386,0,0.0000,34.62,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:55,0.0093,0.0986,0,0.0000,22.85,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:12:58,0.0271,0.1870,0,0.0000,44.98,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:00,0.0168,0.1318,0,0.0000,34.18,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:02,0.0214,0.1863,0,0.0000,35.27,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:05,0.0225,0.1879,0,0.0000,20.14,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:07,0.0138,0.1357,0,0.0000,39.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:09,0.0295,0.1846,0,0.0000,26.86,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:12,0.0001,0.0012,0,0.0000,-2.02,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:13:14,0.0143,0.1428,0,0.0000,34.92,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:17,0.0004,0.0058,0,0.0000,3.99,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:13:19,0.0267,0.1909,0,0.0000,24.05,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:21,0.0210,0.1866,0,0.0000,23.52,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:24,0.0213,0.1865,0,0.0000,38.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:26,0.0305,0.1644,0,0.0000,23.59,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:28,0.0322,0.1876,0,0.0000,30.33,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:31,0.0189,0.1526,0,0.0000,20.10,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:33,0.0190,0.1871,0,0.0000,24.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:36,0.0180,0.1883,0,0.0000,24.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:38,0.0290,0.1895,0,0.0000,35.70,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:40,0.0250,0.1870,0,0.0000,34.17,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:43,0.0183,0.1684,0,0.0000,38.89,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:45,0.0180,0.1739,0,0.0000,30.83,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:47,0.0290,0.1898,0,0.0000,29.19,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:50,0.0104,0.1222,0,0.0000,28.06,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:52,0.0098,0.1625,0,0.0000,23.95,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:13:54,0.0184,0.1710,0,0.0000,41.55,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:13:57,0.0010,0.0149,0,0.0000,-0.72,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:13:59,0.0281,0.1928,0,0.0000,31.06,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:01,0.0198,0.1853,0,0.0000,32.39,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:04,0.0228,0.1842,0,0.0000,42.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:06,0.0197,0.1919,0,0.0000,25.12,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:08,0.0276,0.1862,0,0.0000,43.31,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:11,0.0167,0.1860,0,0.0000,21.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:13,0.0192,0.1891,0,0.0000,10.79,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:16,0.0197,0.1847,0,0.0000,36.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:18,0.0180,0.1858,0,0.0000,29.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:20,0.0125,0.1868,0,0.0000,35.50,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:23,0.0159,0.1114,0,0.0000,35.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:25,0.0195,0.1844,0,0.0000,35.13,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:27,0.0318,0.1911,0,0.0000,37.69,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:30,0.0098,0.0973,0,0.0000,28.64,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:14:32,0.0194,0.1732,0,0.0000,21.77,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:34,0.0270,0.1862,0,0.0000,32.11,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:37,0.0168,0.1538,0,0.0000,22.12,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:39,0.0195,0.1868,0,0.0000,39.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:41,0.0235,0.1857,0,0.0000,30.11,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:44,0.0149,0.1462,0,0.0000,39.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:46,0.0240,0.1864,0,0.0000,26.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:48,0.0238,0.1778,0,0.0000,19.76,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:51,0.0100,0.1108,0,0.0000,33.92,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:53,0.0253,0.1798,0,0.0000,27.35,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:55,0.0252,0.1846,0,0.0000,20.39,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:14:58,0.0292,0.1859,0,0.0000,32.66,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:00,0.0283,0.1887,0,0.0000,23.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:03,0.0259,0.1861,0,0.0000,21.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:05,0.0128,0.1023,0,0.0000,42.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:07,0.0261,0.1842,0,0.0000,42.30,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:10,0.0085,0.1115,0,0.0000,40.37,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:12,0.0005,0.0053,0,0.0000,11.99,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:14,0.0215,0.1855,0,0.0000,34.76,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:17,0.0088,0.0865,0,0.0000,23.69,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:19,0.0257,0.1832,0,0.0000,21.38,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:22,0.0067,0.1161,0,0.0000,0.42,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:24,0.0129,0.1617,0,0.0000,26.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:26,0.0196,0.1851,0,0.0000,33.45,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:29,0.0223,0.1792,0,0.0000,28.40,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:31,0.0001,0.0005,0,0.0000,-2.13,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:33,0.0213,0.1533,0,0.0000,34.51,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:36,0.0134,0.1675,0,0.0000,37.71,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:38,0.0237,0.1900,0,0.0000,32.15,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:41,0.0375,0.1883,0,0.0000,30.66,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:43,0.0149,0.1767,0,0.0000,40.82,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:45,0.0235,0.1844,0,0.0000,23.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:48,0.0261,0.1903,0,0.0000,21.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:50,0.0180,0.1844,0,0.0000,36.47,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:52,0.0280,0.1875,0,0.0000,37.98,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:15:55,0.0076,0.0698,0,0.0000,31.90,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:15:57,0.0087,0.0820,0,0.0000,23.03,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:16:00,0.0039,0.0410,0,0.0000,24.14,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:16:02,0.0140,0.1594,0,0.0000,33.22,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:04,0.0138,0.0981,0,0.0000,30.03,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:07,0.0132,0.1355,0,0.0000,35.66,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:09,0.0379,0.1862,0,0.0000,29.02,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:11,0.0285,0.1811,0,0.0000,37.24,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:14,0.0027,0.0356,0,0.0000,4.30,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:16:16,0.0138,0.1436,0,0.0000,39.57,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:18,0.0204,0.1862,0,0.0000,21.34,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:21,0.0278,0.1871,0,0.0000,46.99,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:23,0.0176,0.1532,0,0.0000,36.59,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:25,0.0263,0.1909,0,0.0000,22.22,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:28,0.0158,0.1885,0,0.0000,28.42,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:30,0.0120,0.1720,0,0.0000,32.99,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:32,0.0112,0.0941,0,0.0000,36.16,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:35,0.0001,0.0006,0,0.0000,-2.54,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:16:37,0.0299,0.1893,0,0.0000,23.54,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:39,0.0329,0.1874,0,0.0000,45.66,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:42,0.0197,0.1701,0,0.0000,39.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:44,0.0326,0.1878,0,0.0000,22.69,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:46,0.0234,0.1858,0,0.0000,23.33,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:49,0.0131,0.1859,0,0.0000,38.36,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:51,0.0320,0.1851,0,0.0000,44.60,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:54,0.0007,0.0134,0,0.0000,-2.32,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:16:56,0.0339,0.1898,0,0.0000,33.78,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:16:58,0.0279,0.1916,0,0.0000,30.53,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:01,0.0148,0.1439,0,0.0000,21.68,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:03,0.0192,0.1840,0,0.0000,44.43,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:05,0.0290,0.1881,0,0.0000,20.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:08,0.0219,0.1855,0,0.0000,31.21,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:10,0.0001,0.0006,0,0.0000,-2.56,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:17:12,0.0135,0.1307,0,0.0000,42.65,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:15,0.0176,0.1461,0,0.0000,23.81,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:17,0.0342,0.1918,0,0.0000,17.19,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:19,0.0121,0.1071,0,0.0000,29.64,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:22,0.0297,0.1869,0,0.0000,21.97,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:24,0.0242,0.1870,0,0.0000,37.19,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:26,0.0001,0.0005,0,0.0000,-2.68,Muito baixo (Silêncio),Also invited 1; Sala Up
+2026-05-25 09:17:29,0.0188,0.1856,0,0.0000,20.11,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:31,0.0306,0.1869,0,0.0000,19.43,Baixo (Ruído baixo/OK),Also invited 1; Sala Up
+2026-05-25 09:17:33,0.0102,0.1379,0,0.0000,36.25,Muito baixo (Ruído baixo/OK),Also invited 1; Sala Up
